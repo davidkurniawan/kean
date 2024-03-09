@@ -1,0 +1,9 @@
+[07-Nov-2022 19:07:23 Asia/Jakarta] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/dairyoff/public_html/application/views/tabs/profile.php on line 30
+[07-Nov-2022 19:07:25 Asia/Jakarta] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/dairyoff/public_html/application/views/tabs/profile.php on line 30
+[07-Nov-2022 19:07:28 Asia/Jakarta] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/dairyoff/public_html/application/views/tabs/profile.php on line 30
+[17-Nov-2022 15:02:49 Asia/Jakarta] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /home/dairyoff/developmen.diaryofficial.id/application/config/constants.php on line 96
+[17-Nov-2022 15:02:58 Asia/Jakarta] PHP Parse error:  syntax error, unexpected ';', expecting ',' or ')' in /home/dairyoff/developmen.diaryofficial.id/application/config/constants.php on line 96
+[21-Nov-2022 12:53:50 Asia/Jakarta] PHP Fatal error:  Cannot use empty array elements in arrays in /home/dairyoff/public_html/application/controllers/Cart.php on line 284
+[21-Nov-2022 12:53:52 Asia/Jakarta] PHP Fatal error:  Cannot use empty array elements in arrays in /home/dairyoff/public_html/application/controllers/Cart.php on line 284
+[21-Nov-2022 12:54:14 Asia/Jakarta] PHP Fatal error:  Cannot use empty array elements in arrays in /home/dairyoff/public_html/application/controllers/Cart.php on line 284
+[21-Nov-2022 12:54:14 Asia/Jakarta] PHP Fatal error:  Cannot use empty array elements in arrays in /home/dairyoff/public_html/application/controllers/Cart.php on line 284
