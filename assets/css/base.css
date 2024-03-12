@@ -155,7 +155,7 @@ input[type="color"]:focus,
     width: 100%;    
     top: 0px;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    height: 180px;
+/*    height: 180px;*/
     z-index: 999;
 }
 
@@ -165,6 +165,10 @@ input[type="color"]:focus,
 
 .header.white {
     background: linear-gradient(0deg, rgba(234, 231, 236, 0.4), rgba(234, 231, 236, 0.4)), #FFFFFF;
+}
+
+.navbar .header .option-header button:focus, .header .option-header button {
+    border-color: transparent;
 }
 
 .header a.logo {

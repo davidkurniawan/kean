@@ -28,37 +28,11 @@
     <link rel="stylesheet" href="<?php echo ASSETS ?>css/base.css" rel="stylesheet">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         
-    <title> <?php echo (empty($this->uri->segment(1))) ? "HOME":strtoupper($this->uri->segment(1)) ?> | Diary </title>
+    <title>KEAN</title>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KNXBBNW');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google tag (gtag.js) --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11209121128"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11209121128'); </script>
-<!-- Event snippet for Website lead conversion page --> 
-<script> gtag('event', 'conversion', {'send_to': 'AW-11209121128/batKCKqtr6oYEOi69uAp'}); </script>
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNXBBNW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
-)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    
-      ttq.load('CI4IB4RC77U4TTM9CEI0');
-      ttq.page();
-    }(window, document, 'ttq');
-</script>
 
 <!-- Modal -->
 <div class="modal fade" id="registerDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerDialogLabel" aria-hidden="true">
@@ -128,108 +102,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 */
  ?>
 
-<nav class="header pb-2 pb-sm-1 pt-4 <?php if(isset($navbar)) echo $navbar; ?>">
-  <div class="background"></div>
-  
-  <div class="container d-flex mb-0 mb-sm-2 justify-content-center">    
-    <a href="<?php echo BASEURL ?>" class="logo"><img src="<?php echo ASSETS ?>img/logo.png" class="navbar-logo" loading="lazy"/></a>
-  </div>
-  <div class="navbar navbar-expand-lg">
-    <div class="container gap-0 gap-lg-2">    
-        <button class="order-1 navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list"></i>
-            <i class="bi bi-x-lg"></i>
-        </button>  
-        <div class="order-3 order-lg-2 collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 gap-1 gap-lg-3 mb-lg-0">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" href="<?php if(urisegment(1) == "reseller" || urisegment(1) == "produk")  echo BASEURL.'reseller'; else echo BASEURL; ?>">Home</a>
+                    <a class="nav-link" href="#">LATEST</a>
                 </li>
-                <li class="nav-item <?php if(urisegment(1) == "reseller" || urisegment(1) == "produk") echo 'd-none'; ?>">
-                <a class="nav-link" href="<?php echo BASEURL.'beautytips' ?>">Diary News</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">APPAREL</a>
                 </li>
-                <li class="nav-item <?php if(urisegment(1) == "reseller" || urisegment(1) == "produk") echo 'd-none'; ?>">
-                <a class="nav-link" href="<?php echo BASEURL.'reseller' ?>">Reseller</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FOOTWEAR</a>
                 </li>
-                <li class="nav-item <?php if(urisegment(1) != "reseller" && urisegment(1) != "produk") echo 'd-none'; ?>">
-                    <a class="nav-link" href="
-                    <?php if (cekPaketBestie() == FALSE){ ?>
-                        <?php echo BASEURL.'produk' ?>
-                    <?php }else if(sessionData('sessUser') == false) { ?>
-                        <?php echo BASEURL.'produk' ?>
-                    <?php } ?>
-                ">Product</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SKATEBOARDS</a>
                 </li>
-
-                <?php if (sessionData('sessUser')){ ?>
-                <li class="nav-item dropdown onlymobile btn btn-<?php if(isset($navbar) == true) echo $navbar; else echo 'orange';?>">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hai, <?php echo sessionData('sessNamaUser') ?>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="<?php echo BASEURL.'profile' ?>">Profile</a></li>
-                    <li><a class="dropdown-item" href="<?php echo BASEURL.'login/logout' ?>">Logout</a></li>
-                  </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ACCESSORIES</a>
                 </li>
-                <?php } ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BRANDS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NEWS</a>
+                </li>
             </ul>
-
-            <form class="d-flex flex-fill mx-0 mx-lg-4 my-4 my-lg-0" role="search">
-                <div class="input-group form-search px-0 px-xl-5">
-                    <input type="search" class="form-control input-search" placeholder="Cari Promo" aria-label="Cari Promo" aria-describedby="button-search">
-                    <button class="btn btn-search" type="button" id="button-search"><i class="bi bi-search"></i></button>
+            <form class="d-flex">
+                <div class="btn-group option-header" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn "><i class="bi bi-search"></i></button>
+                    <button type="button" class="btn "><i class="bi bi-person"></i></button>
+                    <button type="button" class="btn "><i class="bi bi-cart"></i></button>
                 </div>
             </form>
-
-            <div class="button-group">
-                <div class="d-flex gap-2">
-                    <button class="<?php  if(sessionData('sessUser') == true || urisegment(1) == "reseller") echo 'd-none'; ?> btn btn-<?php if(isset($navbar) == true) echo $navbar; else echo 'orange';?> flex-fill" type="button" data-bs-toggle="modal" data-bs-target="#registerDialog">Join Reseller</button>
-                    <?php if (sessionData('sessUser')){ ?>
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                          <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hai, <?php echo sessionData('sessNamaUser') ?>
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?php echo BASEURL.'profile' ?>">Profile</a></li>
-                                <li><a class="dropdown-item" href="<?php echo BASEURL.'login/logout' ?>">Logout</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </div>
-                    <?php } else { ?>
-                        <a href="<?php echo BASEURL.'login' ?>" class="<?php if(sessionData('sessUser') == true || urisegment(1) != "reseller") echo 'd-none'; ?> btn btn-<?php if(isset($navbar) == 1) echo $navbar; else echo 'orange';?> flex-fill" type="button" >Login / Register</a>
-                    <?php } ?>
-                    <!-- <button class="btn btn-white flex-fill" type="button">Login Reseller</button> -->
-                </div>                
-            </div>
         </div>
-        <div class="button-group order-2 order-lg-3 d-inline-flex">
-            <?php if (sessionData('sessUser') == true): ?>
-            <a href="<?php echo BASEURL.'cart' ?>" class="position-relative btn-bag">
-                <i class="bi bi-bag"></i>
-                <span class="position-absolute translate-middle badge rounded-pill bg-danger">
-                    <?php echo count(shoopingcart()) ?>
-                    <span class="visually-hidden">unread messages</span>
-                </span>
-            </a>
-            <?php endif ?>
-            
-            <?php 
-            /*
-            if($_SESSION["is_login"] == true) {         
-                include("notifications.php");
-                echo '<a href="index.php?page=profile&navbar=white#pills-profile" class="position-relative btn-bag">
-                        <i class="bi bi-person-circle"></i>
-                        <span class="word-small"><small>Hi,</small>Belle</span>
-                    </a>';
-            } 
-            */
-            ?>
-                   
-        </div>
-        
     </div>
-  </div>
 </nav>
