@@ -74,6 +74,72 @@
 			</div>
 		</div>
 	</section>
+	<section class="latest-arrival mt-5 pt-5">
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-section d-flex gap-1 gap-lg-3">
+						<h3>LATEST ARRIVAL</h3>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+						<div>View All</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			
+		</div>
+		<div class="width-overflow product ms-lg-5 ">
+				<div class="d-flex">
+					<?php for ($i=0; $i < 10; $i++) { ?>
+						<div class="col-lg-3 p-4">
+							<div class="card">
+								<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
+								<div class="card-body">
+									<h5 class="card-title">Brand Name</h5>
+									<p>Product/Article Name</p>
+									<p>Price</p>
+								</div>
+							</div>
+
+							<a class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> MORE FROM BRAND</a>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+	</section>
+	<section class="popular-products mt-5 pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-section d-flex gap-1 gap-lg-3">
+						<h3>POPULAR PRODUCTS</h3>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+						<div>View All</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			
+		</div>
+		<div class="width-overflow product ms-lg-5">
+				<div class="d-flex">
+					<?php for ($i=0; $i < 10; $i++) { ?>
+						<div class="col-lg-3 p-4">
+							<div class="card">
+								<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
+								<div class="card-body">
+									<h5 class="card-title">Brand Name</h5>
+									<p>Product/Article Name</p>
+									<p>Price</p>
+								</div>
+							</div>
+
+							<a class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE ITEM</a>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+	</section>
 </div>
 
 <script type="text/javascript">

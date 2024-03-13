@@ -1841,10 +1841,23 @@ a.btn-bag {
 }
 
 hr {
-    border-bottom: 1px outset #D6D6D6;
-    margin: 2rem 0;
+    border-bottom: 1px outset black;
+/*    margin: 2rem 0;*/
 }
 
+.width-overflow {
+    overflow: hidden;
+    outline: none;
+}
+
+.product .btn-warning {
+    border-radius: unset;
+    width: 100%;
+}
+.title-section h3, .title-section i, .title-section div {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .cart-summary h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;

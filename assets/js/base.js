@@ -25,6 +25,20 @@ function previewFile(){
     }
 }
 
+
+(function($) {
+
+    /*------------------
+        ScrollBar
+    --------------------*/
+    $(".width-overflow").niceScroll({
+        cursorborder:"",
+        cursorcolor:"#afafaf",
+        boxzoom:false
+    });
+
+})(jQuery);
+
 $(document).ready(function() {
 
     if ($(this).scrollTop() >= 1) {
