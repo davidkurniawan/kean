@@ -119,7 +119,6 @@
 					<hr>
 				</div>
 			</div>
-			
 		</div>
 		<div class="width-overflow product ms-lg-5">
 				<div class="d-flex">
@@ -139,6 +138,108 @@
 					<?php } ?>
 				</div>
 			</div>
+	</section>
+
+	<section class="section-portal mt-5 pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-section d-flex gap-1 gap-lg-3">
+						<h3>MUSIC</h3>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+						<div>View All</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="container height-lg-523 mb-5">
+			<div class="row">
+				<div class="col-12 col-lg-3">
+					<div class="card height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg.png' ?>">
+						<div class="card-body">
+							<h5 class="card-title">HEAD LINE/UP COMMING BRAND</h5>
+							<p>Identitas dari ketiganya tersebut yang sangat ikonik bertemu dengan signature style dari Miracle Mates melalui beberapa lineup item, macam balaclava, safari hat, work jacket.lineup item, macam balaclava, safari hat, work</p>
+						</div>
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="responsive height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg2.png' ?>" class="img-fluid">
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-3">
+					<div class="card height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg.png' ?>">
+						<div class="card-body">
+							<h5 class="card-title">HEAD LINE/UP COMMING BRAND</h5>
+							<p>Identitas dari ketiganya tersebut yang sangat ikonik bertemu dengan signature style dari Miracle Mates melalui beberapa lineup item, macam balaclava, safari hat, work jacket.</p>
+						</div>
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-portal mt-5 pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-section d-flex gap-1 gap-lg-3">
+						<h3>MUSIC</h3>
+						<i class="bi bi-arrow-right-circle-fill"></i>
+						<div>View All</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="container height-lg-523 mb-5">
+			<div class="row">
+				<div class="col-12 col-lg-3">
+					<div class="card height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg.png' ?>">
+						<div class="card-body">
+							<h5 class="card-title">HEAD LINE/UP COMMING BRAND</h5>
+							<p>Identitas dari ketiganya tersebut yang sangat ikonik bertemu dengan signature style dari Miracle Mates melalui beberapa lineup item, macam balaclava, safari hat, work jacket.lineup item, macam balaclava, safari hat, work</p>
+						</div>
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="responsive height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg2.png' ?>" class="img-fluid">
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-3">
+					<div class="card height-lg-523">
+						<img src="<?php echo ASSETS.'img/backgrounds/musicbg.png' ?>">
+						<div class="card-body">
+							<h5 class="card-title">HEAD LINE/UP COMMING BRAND</h5>
+							<p>Identitas dari ketiganya tersebut yang sangat ikonik bertemu dengan signature style dari Miracle Mates melalui beberapa lineup item, macam balaclava, safari hat, work jacket.</p>
+						</div>
+						<div class="btn-view-more mb-4 mb-md-0">
+							<a class="btn btn-warning mt-lg-5" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 </div>
 

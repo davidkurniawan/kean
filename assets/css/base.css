@@ -682,6 +682,12 @@ input[type="color"]:focus,
     #carouselStack .carousel-inner .carousel-item-prev {
       transform: translateX(-33.3%);
     }
+    .height-lg-523 {
+        height: 523px;
+    }
+    .height-lg-523 .btn-view-more {
+        position: absolute;bottom: 0;width: 100%;
+    }
 }
 
 #carouselStack .carousel-inner .carousel-item-end,
@@ -1853,6 +1859,14 @@ hr {
 .product .btn-warning {
     border-radius: unset;
     width: 100%;
+}
+.section-portal .btn-warning {
+    border-radius: unset;
+    width: 100%;
+}
+
+.responsive {
+    position: relative;
 }
 .title-section h3, .title-section i, .title-section div {
     margin-top: auto;
