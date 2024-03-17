@@ -93,12 +93,14 @@
 					<?php for ($i=0; $i < 10; $i++) { ?>
 						<div class="col-lg-3 p-4">
 							<div class="card">
-								<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
-								<div class="card-body">
-									<h5 class="card-title">Brand Name</h5>
-									<p>Product/Article Name</p>
-									<p>Price</p>
-								</div>
+								<a href="<?php echo BASEURL.'product' ?>">
+									<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
+									<div class="card-body">
+										<h5 class="card-title">Brand Name</h5>
+										<p>Product/Article Name</p>
+										<p>Price</p>
+									</div>
+								</a>
 							</div>
 
 							<a href="<?php echo BASEURL.'product' ?>" class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> MORE FROM BRAND</a>

@@ -1663,6 +1663,7 @@ a.btn-bag {
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
     color: black;
+    font-weight: bolder;
     border-radius: unset;
 }
 
@@ -1872,6 +1873,11 @@ hr {
 .product .btn-warning {
     border-radius: unset;
     width: 100%;
+}
+
+.product a {
+    color: black;
+    text-decoration: unset;
 }
 .section-portal .btn-warning {
     border-radius: unset;
