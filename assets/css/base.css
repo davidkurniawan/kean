@@ -1647,10 +1647,23 @@ a.btn-bag {
     text-decoration: none;
     color: inherit !important
 }
+.fw-quantity .add-to-cart .btn-warning {
+    border-radius: unset;
+}
 
-.add-to-cart {
-    border-top: 1px solid #C3C3C3;
-    border-bottom: 1px solid #C3C3C3;
+.product-description #description-tab .tab-pane.active {
+    width: 60%;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: black;
+    color: white;
+    border-radius: unset;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+    color: black;
+    border-radius: unset;
 }
 
 .number input {
@@ -1865,6 +1878,14 @@ hr {
     width: 100%;
 }
 
+.email-subscribe .title h5 {
+    color: white;
+}
+.email-subscribe .btn.btn-warning {
+    padding: .375rem .75rem;
+    border-radius: unset;
+}
+
 .responsive {
     position: relative;
 }
@@ -1960,10 +1981,121 @@ hr {
     width: 100%;
 }
 
+.product-thumbs .product-thumbs-track .pt.active {
+    opacity: 1;
+}
+
+.product-thumbs .product-thumbs-track .pt {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.fw-size-choose .sc-item {
+    display: inline-block;
+    position: relative;
+    margin-right: 5px;
+}
+
+.product-description-card .fw-size-choose label {
+    width: 45px;
+    height: 45px;
+    font-size: 12px;
+}
+
+.number-quantity .number input {
+    height: 40px;
+    width: 80px;
+    background: #FFF;
+    border-radius: 0px;
+    padding: 8px 5px 8px 5px;
+    border: 0px;
+    border-top: 0.5px solid #404040;
+    border-bottom: 0.5px solid #404040;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 -4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.number-quantity .number .minus-bestie, .number .plus-bestie {
+    width: 40px;
+    height: 40px;
+    background: #FFF;
+    border-radius: 0px;
+    padding: 8px 5px 8px 5px;
+    border: 0.5px solid #404040;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.number-quantity .number .minus-bestie, .number .plus-bestie {
+    width: 40px;
+    height: 40px;
+    background: #FFF;
+    border-radius: 0px;
+    padding: 8px 5px 8px 5px;
+    border: 0.5px solid #404040;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fw-size-choose label {
+    display: inline-block;
+    height: 30px;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #414141;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 7px 6px 0;
+}
+
+.product-description-card .fw-size-choose .disable label {
+    border: 2px solid #e1e1e1;
+    color: #cacaca;
+}
+
+.fw-size-choose input[type=radio]:checked+label {
+    border: 2px solid black;
+}
+
+.product-price {
+    display: flex;
+    position: relative;
+    margin-right: 5px;
+}
+
+.product-price .currency {
+
+}
+
+.product-price .value {
+    font-size: 31px;
+}
+
+.fw-size-choose input[type=radio] {
+    visibility: hidden;
+    position: absolute;
+}
 /* tablet and smaller */
 @media (max-width: 991.98px) { 
     .cart.content .empty .banner {
         width: 80%;
+    }
+
+    .email-subscribe .d-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .email-subscribe .form-group {
+        width: 100%;
     }
 
     .cart-items .items .item .image-product {

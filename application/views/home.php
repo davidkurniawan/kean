@@ -101,7 +101,7 @@
 								</div>
 							</div>
 
-							<a class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> MORE FROM BRAND</a>
+							<a href="<?php echo BASEURL.'product' ?>" class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> MORE FROM BRAND</a>
 						</div>
 					<?php } ?>
 				</div>
@@ -241,13 +241,23 @@
 			</div>
 		</div>
 	</section>
+	<section class="email-subscribe bg-dark">
+		<div class="row pt-4 pb-4 ps-3 pe-4 justify-content-end">
+			<div class="title col-12 col-lg-7 text-end">
+				<h5>Subscribe to our newsletter to receive special offer and first look at new products.</h5>
+			</div>
+			<div class="col-12 col-lg-5">
+				<div class="d-flex gap-1 gap-lg-3">
+					<div class="form-group">
+						<input type="email" class="form-control" name="email" placeholder="Email Address">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="email" placeholder="Full Name">
+					</div>
+					<button class="btn btn-warning">Subscribe</button>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function () {
-		$('.slick-brand').slick({
-		  autoplay: true,
-		  autoplaySpeed: 1000,
-		});
-	});
-</script>

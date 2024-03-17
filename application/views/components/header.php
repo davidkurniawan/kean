@@ -16,8 +16,8 @@
     <meta property="og:description" content="-">
     <meta property="og:image" content="<?php echo ASSETS ?>img/metashare.png">
     
-    <link rel="shortcut icon" href="<?php echo ASSETS ?>img/logo.ico" type="image/x-icon">
-    <link rel="icon" href="<?php echo ASSETS ?>img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="icon" href="" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css">
-        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <title>KEAN</title>
 
 </head>

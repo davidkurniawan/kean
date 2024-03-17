@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Produk extends CI_Controller {
+class Product extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -26,21 +26,10 @@ class Produk extends CI_Controller {
 		$viewData['productVarian'] = $this->GlobalModel->queryManual('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product WHERE pi.kategori_item_product =2 AND pi.id_product=84 ');
 		$viewData['productRelated'] = $this->GlobalModel->getDataSortLimit('product',array('status_product'=>0),'nama_product','DESC',4);
 		// pre($viewData);
-		if ($viewData['productfirst']['id_product'] == 89) {
-			$this->load->view('components/header',$data);
-			$this->load->view('product',$viewData);
-			$this->load->view('components/footer');
-		} else {
-			if (sessionData('sessUser') == TRUE) {
-				if (cekPaketBestie() == FALSE) {
-					redirect(BASEURL.'reseller');
-				}
-			}
-			$this->load->view('components/header',$data);
-			$this->load->view('product',$viewData);
-			$this->load->view('components/footer');
-		}
 
+		$this->load->view('components/header',$data);
+		$this->load->view('product/product-detail',$viewData);
+		$this->load->view('components/footer');
 		
 	}
 

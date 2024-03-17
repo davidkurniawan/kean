@@ -41,6 +41,11 @@ function previewFile(){
 
 $(document).ready(function() {
 
+    $('.slick-brand').slick({
+      autoplay: true,
+      autoplaySpeed: 1000,
+    });
+
     if ($(this).scrollTop() >= 1) {
         $('.header').addClass('sticky'); 
         $('.sectionFirst').addClass('top'); 
@@ -236,3 +241,10 @@ $(window).scroll(function(){
     
     lastScrollTop = st <= 0 ? 0 : st;
 });
+
+ /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
