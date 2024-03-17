@@ -31,7 +31,7 @@
                         </div>
                         <div class="product-pic-zoom">
                              <a href="<?php echo ASSETS.'img/product/product1.webp' ?>" class="glightbox preview-link">
-                                <img class="<?php echo ASSETS.'img/product/product1.webp' ?>" class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
+                                <img class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
                              </a>
                         </div>
                     </div>
@@ -86,8 +86,8 @@
                             </div>
                         </div>
 
-                        <div class="fw-quantity mt-4 d-flex">
-                            <div class="number-quantity">
+                        <div class="fw-quantity mt-4 row">
+                            <div class="number-quantity col-12 col-lg-6">
                                 <div class="number">
                                     <input type="hidden" value="1" id="totalJumlah">
                                     <span class="minus-bestie" data-rowid="89" data-price="105200">-</span>
@@ -95,7 +95,7 @@
                                     <span class="plus-bestie" data-rowid="89" data-price="105200">+</span>
                                 </div>
                             </div>
-                            <div class="add-to-cart ms-4">
+                            <div class="add-to-cart col-12 col-lg-6">
                                 <button class="btn btn-warning ps-5 pe-5 btn-add-cart"><i class="bi bi-cart"></i> ADD TO CART</button>
                             </div>
                         </div>

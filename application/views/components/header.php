@@ -143,7 +143,7 @@
     </div>
 </nav>
 <div class="iso-marquee-linkwrap">    
-    <div class="iso-marquee--long iso-marquee" style="--tw:200ch; --ad:20s;display: flex;">       
+    <div class="iso-marquee--long iso-marquee" style="--tw:228ch; --ad:20s;display: flex;">       
         <span class="me-3">RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i clas me-2 ms-2s="bi bi-star-fill"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i>  RUNNING TEXT PROMO <i class="bi bi-star-fill me-2 ms-2"></i> </span>    
     </div> 
 </div>

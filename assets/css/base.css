@@ -2031,6 +2031,9 @@ hr {
     width: 100%;
 }
 
+.product-thumbs {
+    width: 20%;
+}
 .product-thumbs .product-thumbs-track .pt.active {
     opacity: 1;
 }
@@ -2127,6 +2130,12 @@ hr {
 
 .product-price .value {
     font-size: 31px;
+}
+
+.menu-footer div a {
+    text-decoration: unset;
+    color: black;
+    line-height: 2;
 }
 
 .fw-size-choose input[type=radio] {
