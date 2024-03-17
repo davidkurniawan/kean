@@ -1,6 +1,6 @@
 
 <div class="main">
-    <section class="breadcrum-custom">
+    <section class="breadcrum-custom mt-4 mb-4">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -17,11 +17,6 @@
             <div class="row">
                 <div class="col-12 col-lg-7">
                     <div class="d-flex">
-                        <div class="product-pic-zoom">
-                             <a href="<?php echo ASSETS.'img/product/product1.webp' ?>" class="glightbox preview-link">
-                                <img class="<?php echo ASSETS.'img/product/product1.webp' ?>" class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
-                             </a>
-                        </div>
                         <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
                             <div class="product-thumbs-track">
                                 <div class="pt active" data-imgbigurl="<?php echo ASSETS.'img/product/product1.webp' ?>"><img class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
@@ -33,6 +28,11 @@
                                     <a href="<?php echo ASSETS.'img/product/product3.webp' ?>" class="glightbox preview-link"></a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="product-pic-zoom">
+                             <a href="<?php echo ASSETS.'img/product/product1.webp' ?>" class="glightbox preview-link">
+                                <img class="<?php echo ASSETS.'img/product/product1.webp' ?>" class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
+                             </a>
                         </div>
                     </div>
                 </div>

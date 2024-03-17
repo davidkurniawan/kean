@@ -1860,6 +1860,50 @@ a.btn-bag {
     width: 100%;
 }
 
+.iso-marquee {
+    padding: 0.4rem 0;
+    overflow: hidden;
+    background-color: #ffcd39;
+}
+
+.iso-marquee--long {
+    font-size: 1.25vw;
+}
+
+.iso-marquee-linkwrap a {
+    color: #ffffff;
+}
+
+.iso-marquee span {
+    display: inline-block;
+    white-space: nowrap;
+    color: black;
+    text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
+    will-change: transform;
+    animation: iso-marquee var(--ad) linear infinite;
+    animation-play-state: play;
+}
+
+@keyframes iso-marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+} /* * on MacOs: System Preferences > * Accessibility > * Display > Reduce motion */@media (prefers-reduced-motion: reduce) {
+    .iso-marquee span {
+        animation: none;
+        text-shadow: none;
+        width: auto;
+        display: block;
+        line-height: 1.5;
+        text-align: center;
+        white-space: normal;
+    }
+}
+
 hr {
     border-bottom: 1px outset black;
 /*    margin: 2rem 0;*/
@@ -2094,6 +2138,9 @@ hr {
     .cart.content .empty .banner {
         width: 80%;
     }
+    .iso-marquee--long {
+    font-size: 5vw;
+}
 
     .email-subscribe .d-flex {
         display: flex;
