@@ -111,10 +111,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LATEST</a>
+                    <a class="nav-link" href="<?php echo BASEURL.'latest' ?>">LATEST</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">APPAREL</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    APPAREL
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">T-SHIRT</a></li>
+                        <li><a class="dropdown-item" href="#">SHIRT</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">FOOTWEAR</a>
