@@ -2038,6 +2038,55 @@ hr {
     background-size: cover;
 }
 
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    height: 400px;
+}
+.video-youtube .embed-responsive .wrapper-thumbnail {
+    position: absolute;
+    overflow: hidden;
+    inset: 7px 5px .5rem;
+}
+.embed-responsive:before {
+    display: block;
+    content: "";
+}
+.video-youtube .embed-responsive .wrapper-thumbnail .thumbnail-youtube {
+    background-image: url(http://localhost/kean/assets/img/banner/skatevideo.jpeg);
+    background-position: top center;
+    height: 409px;
+}
+.video-youtube .embed-responsive .wrapper-thumbnail .wrapper-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-youtube .embed-responsive .wrapper-thumbnail .wrapper-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-youtube .embed-responsive .wrapper-thumbnail {
+    position: absolute;
+    overflow: hidden;
+    inset: 7px 5px .5rem;
+}
+
+@media (min-width: 768px){
+    .video-youtube .embed-responsive .wrapper-thumbnail {
+        inset: 1.375rem 1rem 1.5rem 1rem;
+    }
+
+}
+
 .background-image-latest .display-text {
     width: 50%;
     position: absolute;

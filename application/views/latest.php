@@ -34,6 +34,21 @@
 			</div>
 		</div>
 	</section>
+	<section class="sc-home-video py-main mt-5">
+	    <div class="container">
+	        <div class="video-youtube">
+	            <div class="embed-responsive embed-responsive-16by9">
+	                <div class="wrapper-thumbnail" role="button" tabindex="0">
+	                    <div style="background-image:url('<?php echo ASSETS.'img/banner/skatevideo.jpeg' ?>');" alt="youtube-thumbnail" class="thumbnail-youtube" quality="75" style="object-fit:cover"></div>
+	                    <div class="wrapper-button">
+	                        <img src="https://wethefest.com//_next/static/media/icon_play.c76ea39b.svg" alt="play-btn" class="img-fluid" quality="75" >
+	                    </div>
+	                </div>
+	                <img src="https://wethefest.com//img/bg/img_bg-home-video.webp" alt="" class="bg-border-video" quality="75" sizes="(max-width: 768px) 55vw, (max-width: 1200px) 50vw, 65vw" style="inset:0;width:100%;height:100%;position:absolute">
+	            </div>
+	        </div>
+	    </div>
+	</section>
 	<section class="sorting-product mt-5">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
