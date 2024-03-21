@@ -88,6 +88,7 @@
     <script type="text/javascript" src="<?php echo JS.'jquery.nicescroll.min.js' ?>"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="<?php echo ASSETS ?>plugins/swiper/swiper-bundle.min.js"></script>
 
     <?php
         if(isset($_GET["page"]) && $_GET["page"] == "product") {
