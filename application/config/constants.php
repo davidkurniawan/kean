@@ -93,7 +93,7 @@ define('CSS', ASSETS.'css/');
 define('JS', ASSETS.'js/');
 define('IMAGES', ASSETS.'img/');
 
-define('BACKENDURL','http://localhost/emskean/');
+define('BASEBACK','http://localhost/emskean/');
 define('ASSETSBACK', BASEBACK.'assets/');
 define('IMAGESBACK', ASSETSBACK.'images/');
 

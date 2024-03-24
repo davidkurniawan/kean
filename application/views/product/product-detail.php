@@ -4,10 +4,10 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Apparel</a></li>
-                    <li class="breadcrumb-item"><a href="#">Item</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Article Name</li>
+                    <li class="breadcrumb-item text-capitalize"><a href="<?php echo BASEURL ?>">Home</a></li>
+                    <li class="breadcrumb-item text-capitalize"><a href="<?php echo BASEURL.$product['kategori'] ?>"><?php echo $product['kategori'] ?></a></li>
+                    <li class="breadcrumb-item text-capitalize"><a href="<?php echo BASEURL.$product['kategori'].'/'.$product['sub_kategori'] ?>"><?php echo $product['sub_kategori'] ?></a></li>
+                    <li class="breadcrumb-item text-capitalize active" aria-current="page"><?php echo $product['nama_product'] ?></li>
                 </ol>
             </nav>
         </div>

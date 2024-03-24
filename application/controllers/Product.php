@@ -33,7 +33,7 @@ class Product extends CI_Controller {
 		
 	}
 
-	public function detail($value='',$page="")
+	public function detail($productUrl='',$page="")
 	{
 		$this->session->set_userdata('page_session',$page);
 		
@@ -47,29 +47,17 @@ class Product extends CI_Controller {
 
 		];
 
+
+		$viewData['product'] = $this->GlobalModel->queryManualRow('SELECT pc.name as kategori, pct.name as sub_kategori, p.gender_product, p.diskon, p.created_date, p.id_administrator, a.nama as namabrand ,p.nama_product , p.status_product, p.id_product FROM product p JOIN product_category pc ON p.id_product_category=pc.id_product_category JOIN productsub_category pct ON p.id_productsub_category=pct.id_productsub_category JOIN administrator a ON p.id_administrator=a.id_administrator WHERE p.url_product="'.$productUrl.'"');
+
 		$viewData['showallproduct'] = $this->GlobalModel->getData('product',array('status_product'=>0));
-		$viewData['productfirst'] = $this->GlobalModel->getDataRow('product',array('url_product'=>$value));
+		$viewData['productfirst'] = $this->GlobalModel->getDataRow('product',array('url_product'=>$productUrl));
 		$viewData['imageProduct'] = $this->GlobalModel->getData('image_product',array('id_product'=>$viewData['productfirst']['id_product']));
-		$viewData['productVarian'] = $this->GlobalModel->queryManual('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product WHERE pi.kategori_item_product =2 AND pi.id_product ='.$viewData['productfirst']['id_product'].' ');
 		$viewData['productRelated'] = $this->GlobalModel->getDataSortLimit('product',array('status_product'=>0),'nama_product','DESC',4);
 
-		if ($viewData['productfirst']['id_product'] == 89) {
-			if (cekPaketBestie() == TRUE) {
-				redirect(BASEURL.'reseller');
-			} 
-			$this->load->view('components/header',$data);
-			$this->load->view('product-detail',$viewData);
-			$this->load->view('components/footer');
-		} else {
-			if (sessionData('sessUser') == TRUE) {
-				if (cekPaketBestie() == FALSE) {
-					redirect(BASEURL.'reseller');
-				} 	
-
-			}
-			$this->load->view('components/header',$data);
-			$this->load->view('product-detail',$viewData);
-			$this->load->view('components/footer');
-		}
+		
+		$this->load->view('components/header',$data);
+		$this->load->view('product/product-detail',$viewData);
+		$this->load->view('components/footer');
 	}
 }
