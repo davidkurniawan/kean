@@ -12,7 +12,6 @@ class Home extends CI_Controller {
 		$viewData['showallproduct'] = $this->GlobalModel->getData('product',array('status_product'=>0));
 		$viewData['paketBestie'] = $this->GlobalModel->getDataRow('product',array('id_product'=>89));
 		$viewData['banner']	= $this->GlobalModel->getData("banner",array("page"=>"home"));
-		$viewData['beautytips'] = $this->GlobalModel->getData('beautytips',null);
 		$viewData['instagram']	= $this->GlobalModel->getData("media_social_post",array("kategori_media_social"=>"instagram"));
 		$viewData['tiktok']	= $this->GlobalModel->getData("media_social_post",array("kategori_media_social"=>"tiktok"));
 		$this->load->view('components/header');
