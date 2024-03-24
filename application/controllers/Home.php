@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$viewData['showallproduct'] = $this->GlobalModel->getData('product',array('status_product'=>0));
+		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator');
 		$viewData['paketBestie'] = $this->GlobalModel->getDataRow('product',array('id_product'=>89));
 		$viewData['banner']	= $this->GlobalModel->getData("banner",array("page"=>"home"));
 		$viewData['instagram']	= $this->GlobalModel->getData("media_social_post",array("kategori_media_social"=>"instagram"));

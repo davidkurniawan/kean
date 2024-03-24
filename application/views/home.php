@@ -90,15 +90,15 @@
 		</div>
 		<div class="width-overflow product ms-lg-5 ">
 				<div class="d-flex">
-					<?php for ($i=0; $i < 10; $i++) { ?>
+					<?php foreach ($showallproduct as $key => $produk){ ?>
 						<div class="col-lg-3 p-4">
 							<div class="card">
 								<a href="<?php echo BASEURL.'product' ?>">
-									<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
+									<img src="<?php echo BACKENDURL.'product/'.$produk['product_image_front'] ?>">
 									<div class="card-body">
-										<h5 class="card-title">Brand Name</h5>
-										<p>Product/Article Name</p>
-										<p>Price</p>
+										<h5 class="card-title"><?php echo $produk['nama'] ?></h5>
+										<p><?php echo $produk['nama_product'] ?></p>
+										<p><?php echo $produk['harga'] ?></p>
 									</div>
 								</a>
 							</div>

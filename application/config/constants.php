@@ -93,9 +93,7 @@ define('CSS', ASSETS.'css/');
 define('JS', ASSETS.'js/');
 define('IMAGES', ASSETS.'img/');
 
-define('BACKENDURL','https://wms.diaryofficial.id/');
-
-define('BASEBACK','https://wms.diaryofficial.id/');
+define('BACKENDURL','http://localhost/emskean/');
 define('ASSETSBACK', BASEBACK.'assets/');
 define('IMAGESBACK', ASSETSBACK.'images/');
 
