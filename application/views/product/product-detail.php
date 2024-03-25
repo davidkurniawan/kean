@@ -18,20 +18,20 @@
                 <div class="col-12 col-lg-7">
                     <div class="d-flex">
                         <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
-                            <div class="product-thumbs-track">
-                                <div class="pt active" data-imgbigurl="<?php echo ASSETS.'img/product/product1.webp' ?>"><img class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
-                                </div>
-                                <div class="pt" data-imgbigurl="<?php echo ASSETS.'img/product/product2.webp' ?>"><img class="img-fluid" src="<?php echo ASSETS.'img/product/product2.webp' ?>" alt="">
-                                    <a href="<?php echo ASSETS.'img/product/product2.webp' ?>" class="glightbox preview-link"></a>
-                                </div>
-                                <div class="pt" data-imgbigurl="<?php echo ASSETS.'img/product/product3.webp' ?>"><img class="img-fluid" src="<?php echo ASSETS.'img/product/product3.webp' ?>" alt="">
-                                    <a href="<?php echo ASSETS.'img/product/product3.webp' ?>" class="glightbox preview-link"></a>
-                                </div>
+                            <div class="product-thumbs-track" style="height: 500px;">
+                                <div class="pt active" data-imgbigurl="<?php echo BASEBACK.$productfirst['product_image_front'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" alt="">
+                                        <a href="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" class="glightbox preview-link"></a>
+                                    </div>
+                                <?php foreach ($imageProduct as $key => $img): ?>
+                                    <div class="pt" data-imgbigurl="<?php echo BASEBACK.$img['source_image_product'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$img['source_image_product'] ?>" alt="">
+                                        <a href="<?php echo BASEBACK.$img['source_image_product'] ?>" class="glightbox preview-link"></a>
+                                    </div>
+                                <?php endforeach ?>
                             </div>
                         </div>
                         <div class="product-pic-zoom">
-                             <a href="<?php echo ASSETS.'img/product/product1.webp' ?>" class="glightbox preview-link">
-                                <img class="img-fluid" src="<?php echo ASSETS.'img/product/product1.webp' ?>" alt="">
+                             <a href="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" class="glightbox preview-link">
+                                <img class="img-fluid" src="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" alt="">
                              </a>
                         </div>
                     </div>
@@ -43,60 +43,47 @@
                         <hr>
                             <div class="fw-size-choose">
                                 <div class="color mb-2">COLORS</div>
+                                <?php foreach ($productItem as $key => $prodItem): ?>
                                 <div class="sc-item">
-                                    <input type="radio" name="sc" id="xs-size">
-                                    <label for="xs-size" style="background:black;"></label>
+                                    <input type="radio" name="sc" class="color-product" id="<?php echo $prodItem['slug_color'] ?>-color" data-slugcolor="<?php echo $prodItem['slug_color'] ?>" data-idprod="<?php echo $prodItem['id_product'] ?>" data-idproditem="<?php echo $prodItem['product_item_id'] ?>">
+                                    <label for="<?php echo $prodItem['slug_color'] ?>-color" style="background:<?php echo $prodItem['color'] ?>;"></label>
                                 </div>
-                                <div class="sc-item">
-                                    <input type="radio" name="sc" id="s-size">
-                                    <label for="s-size" style="background:grey;"></label>
-                                </div>
-                                <div class="sc-item">
-                                    <input type="radio" name="sc" id="m-size" checked="">
-                                    <label for="m-size" style="background:red;"></label>
-                                </div>
-                                <div class="sc-item">
-                                    <input type="radio" name="sc" id="l-size">
-                                    <label for="l-size" style="background:orange;"></label>
-                                </div>
-                                <div class="sc-item disable">
-                                    <input type="radio" name="sc" id="xl-size" disabled="">
-                                    <label for="xl-size" style="background:white;"></label>
-                                </div>
-                                <div class="sc-item">
-                                    <input type="radio" name="sc" id="xxl-size">
-                                    <label for="xxl-size" style="background:navajowhite;"></label>
-                                </div>
+                                <?php endforeach ?>
                             </div>
                         <hr>
 
                         <div class="fw-size">
                             <div class="size mb-2">SIZE</div>
                             <div class="form-group">
-                                <select class="form-control">
-                                    <option>Please Choose Size</option>
-                                    <option value="S">S</option>
-                                    <option value="M">M</option>
-                                    <option value="L">L</option>
-                                    <option value="XL">XL</option>
+                                <select class="form-control" id="size-product">
+                                    <option>Please Choose Color First</option>
+                                   
                                 </select>
                             </div>
                             <div class="size-chart-info mt-4">
-                                <a href="" class="btn btn-dark">Size Chart Info</a>
+                                <a href="#" class="btn btn-dark">Size Chart Info</a>
                             </div>
                         </div>
 
                         <div class="fw-quantity mt-4 row">
+                            <div class="show-qty-product" id="show-qty-product"></div>
                             <div class="number-quantity col-12 col-lg-6">
                                 <div class="number">
                                     <input type="hidden" value="1" id="totalJumlah">
-                                    <span class="minus-bestie" data-rowid="89" data-price="105200">-</span>
-                                    <input type="text" value="1" class="totalkeun" id="qty89" data-price="105200" data-rowid="89" readonly="">
-                                    <span class="plus-bestie" data-rowid="89" data-price="105200">+</span>
+                                    <span class="minus" >-</span>
+                                    <input type="text" value="0" class="totalkeun" id="qty" data-max="" readonly="">
+                                    <span class="plus" >+</span>
                                 </div>
                             </div>
-                            <div class="add-to-cart col-12 col-lg-6">
-                                <button class="btn btn-warning ps-5 pe-5 btn-add-cart"><i class="bi bi-cart"></i> ADD TO CART</button>
+                            <div class="col-12 mt-4">
+                                <div class="row">
+                                    <div class="add-to-cart col-12 col-lg-6">
+                                        <button class="btn btn-warning ps-3 pe-3 btn-add-cart w-100"><i class="bi bi-cart"></i> ADD TO CART</button>
+                                    </div>
+                                    <div class="add-to-cart col-12 col-lg-6">
+                                        <button class="btn btn-warning ps-3 pe-3 btn-buy-now w-100"><i class="bi bi-bag"></i> BUY NOW</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

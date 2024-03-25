@@ -39,9 +39,38 @@ function previewFile(){
         boxzoom:false
     });
 
+    $(".product-thumbs-track").niceScroll({
+        cursorborder:"",
+        cursorcolor:"#afafaf",
+        boxzoom:false
+    });
+
 })(jQuery);
 
 $(document).ready(function() {
+
+    const BASEURL = "http://localhost/kean/";
+
+    $('.color-product').click(function () {
+        var dataidProd = $(this).data('idprod');
+        var dataidProdItem = $(this).data('idproditem');
+        var slugColor = $(this).data('slugcolor');
+
+        $.post( BASEURL+'product/searchProductSize', { dataidProd: dataidProd, slugColor: slugColor }).done(function( data ) {
+            $('#size-product').html(data);
+            $('#qty').val('0');
+        });
+    });
+
+    $('#size-product').change(function () {
+        var dataidProdItem = $(this).find(":selected").val();
+        $.post( BASEURL+'product/getProductItem', { dataidProdItem: dataidProdItem }).done(function( data ) {
+            var obj = JSON.parse(data);
+            $('#show-qty-product').html(obj.result);
+            $("#qty").attr('data-max',obj.qty);
+            $(".plus").attr('data-max',obj.qty);
+        });
+    });
 
     $('.slick-brand').slick({
       autoplay: true,
@@ -186,29 +215,26 @@ $(document).ready(function() {
         });
     
         $('.minus').click(function () {
-            var rowid = $(this).data('rowid');
-            var price = $(this).data('price');
 
-            var input = $("#qty"+rowid);
+            var input = $("#qty");
             var count = parseInt(input.val()) - 1;
             count = count < 1 ? 1 : count;
             input.val(count);
             input.change();
 
-            $("#totalJumlah").val(input.val());
-    
             return false;
         });
     
         $('.plus').click(function () {
-            var rowid = $(this).data('rowid');
-            var price = $(this).data('price');
-
-            var input = $("#qty"+rowid);
-            input.val(parseInt(input.val()) + 1);
-            input.change();
-
-            $("#totalJumlah").val(input.val());
+            var input = $("#qty");
+            var countQty = parseInt(input.val()) + 1;
+            var getMaxQty = $(this).data('max');
+            if(countQty <= getMaxQty){
+                input.val(parseInt(input.val()) + 1);
+                input.change();
+            } else {
+                alert('Choose color and size first');
+            }
 
             return false;
         });
@@ -229,7 +255,6 @@ function hitungTotalan() {
     $(".totalkeun").map(function() {        
          total += $(this).data('nilai') * $(this).val();
     }).get();
-
     $('.totalHarga').text("IDR " + (total/1000).toFixed(3));
 }
 
