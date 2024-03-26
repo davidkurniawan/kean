@@ -59,6 +59,7 @@
                                     <option>Please Choose Color First</option>
                                    
                                 </select>
+                                <input type="hidden" name="idProductItem" id="idProductItem">
                             </div>
                             <div class="size-chart-info mt-4">
                                 <a href="#" class="btn btn-dark">Size Chart Info</a>
@@ -78,17 +79,17 @@
                             <div class="col-12 mt-4">
                                 <div class="row">
                                     <div class="add-to-cart col-12 col-lg-6">
-                                        <button class="btn btn-warning ps-3 pe-3 btn-add-cart w-100"><i class="bi bi-cart"></i> ADD TO CART</button>
+                                        <button class="btn btn-warning ps-3 pe-3 btn-add-cart w-100" id="addToCart"><i class="bi bi-cart"></i> ADD TO CART</button>
                                     </div>
                                     <div class="add-to-cart col-12 col-lg-6">
-                                        <button class="btn btn-warning ps-3 pe-3 btn-buy-now w-100"><i class="bi bi-bag"></i> BUY NOW</button>
+                                        <button class="btn btn-warning ps-3 pe-3 btn-buy-now w-100" id="buyNow"><i class="bi bi-bag"></i> BUY NOW</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<!-- product description tabs -->
+                <!-- product description tabs -->
                 <div class="col-12 mt-5">
                     <div class="product-description">
                         <ul class="nav nav-tabs" id="description" role="tablist">

@@ -32,8 +32,8 @@ class Cart extends CI_Controller {
 
 		$item 	= $this->GlobalModel->getDataRow('product_item',array('product_item_id '=>$post['prodItem']));
 		$product = $this->GlobalModel->getDataRow('product',array('id_product '=>$item['id_product']));
-		$varianItem = $this->GlobalModel->getDataRow('jenis_product',array('id_jenis_product '=>$item['nama_item_product']));
-		if ($post['totalVal'] > $item['qty_item']) {
+
+		if ($post['qty'] >= $item['qty_item']) {
 			$reponse = array(
 				'message'	=>	'Quantity tidak ada',
 				'error'		=>	TRUE,
@@ -46,7 +46,7 @@ class Cart extends CI_Controller {
 				'code'		=>  400,
 			);
 		} else {
-			if ($post['totalVal'] == 0) {
+			if ($post['qty'] == 0) {
 				$reponse = array(
 					'message'	=>	'Pastikan anda memilih Qty product terlebih dahulu!',
 					'error'		=>	TRUE,
@@ -54,8 +54,9 @@ class Cart extends CI_Controller {
 				);
 			} else {
 				if ($product['id_product'] == 89) {
-					if (empty($this->cart->contents())) {
+					foreach ($this->cart->contents() as $key => $valueCart) {
 						$insertData = array(
+							'rowid'	=>	$key,
 				            'id'   	=> $post['prodItem'],
 				            'sku'	=> $item['sku_item_product'],
 				            'qty'    	=> 1,
@@ -65,22 +66,7 @@ class Cart extends CI_Controller {
 				            'maxQty'	=> $item['qty_item'],
 				            'diskon'	=> $product['diskon']
 				        );
-			    		$this->cart->insert($insertData);
-					} else {
-						foreach ($this->cart->contents() as $key => $valueCart) {
-							$insertData = array(
-								'rowid'	=>	$key,
-					            'id'   	=> $post['prodItem'],
-					            'sku'	=> $item['sku_item_product'],
-					            'qty'    	=> 1,
-					            'price'    	=> $product['harga_product'],
-					            'name'    	=> $varianItem['nama_jenis_product'],
-					            'image' 	=> $item['image_varian'],
-					            'maxQty'	=> $item['qty_item'],
-					            'diskon'	=> $product['diskon']
-					        );
-				    		$this->cart->update($insertData);
-						}
+			    		$this->cart->update($insertData);
 					}
 				} else {
 					$insertData = array(
@@ -94,78 +80,43 @@ class Cart extends CI_Controller {
 			            'diskon'	=> $product['diskon']
 			        );
 			    	$this->cart->insert($insertData);
+				    $reponse = array(
+						'message'	=>	'Item berhasil di masukan ke cart',
+						'error'		=>	FALSE,
+						'code'		=>  200,
+					);
 				}
-			    $reponse = array(
-					'message'	=>	'Item berhasil di masukan ke cart',
-					'error'		=>	FALSE,
-					'code'		=>  200,
-				);
-				        	
 			}
 		}
-		
 		echo json_encode($reponse);
 	}
 
 	public function buynow($value='')
 	{
-
 		$post = $this->input->post();
 
 		$item 	= $this->GlobalModel->getDataRow('product_item',array('product_item_id '=>$post['prodItem']));
 		$product = $this->GlobalModel->getDataRow('product',array('id_product '=>$item['id_product']));
-		$varianItem = $this->GlobalModel->getDataRow('jenis_product',array('id_jenis_product '=>$item['nama_item_product']));
 
-		if ($product['id_product'] == 89) {
-			if (empty($this->cart->contents())) {
-				$insertData = array(
-	            	'id'   	=> $post['prodItem'],
-	            	'sku'	=> $item['sku_item_product'],
-	            	'qty'    	=> 1,
-	            	'price'    	=> $product['harga_product'],
-	            	'name'    	=> $varianItem['nama_jenis_product'],
-	            	'image' 	=> $item['image_varian'],
-	            	'maxQty'	=> $item['qty_item'],
-					'diskon'	=> $product['diskon']
+		$insertData = array(
+        	'id'   	=> $item['product_item_id'],
+        	'sku'	=> $item['sku'],
+        	'qty'    	=> $post['qty'],
+        	'price'    	=> $item['harga'],
+        	'name'    	=> $product['nama_product'],
+        	'image' 	=> $product['product_image_front'],
+        	'maxQty'	=> $item['qty_item'],
+			'diskon'	=> $product['diskon']
+        );
 
-		        );
-	    		$this->cart->insert($insertData);
-			} else {
-				foreach ($this->cart->contents() as $key => $valueCart) {
-					$insertData = array(
-		            	'id'   	=> $post['prodItem'],
-		            	'sku'	=> $item['sku_item_product'],
-		            	'qty'    	=> 1,
-		            	'price'    	=> $product['harga_product'],
-		            	'name'    	=> $varianItem['nama_jenis_product'],
-		            	'image' 	=> $item['image_varian'],
-		            	'maxQty'	=> $item['qty_item'],
-						'diskon'	=> $product['diskon']
+    	$this->cart->insert($insertData);
 
-			        );
-		    		$this->cart->update($insertData);
-				}
-			}
-			
-		} else {
-			$insertData = array(
-            	'id'   	=> $post['prodItem'],
-            	'sku'	=> $item['sku_item_product'],
-            	'qty'    	=> $post['totalVal'],
-            	'price'    	=> $product['harga_product'],
-            	'name'    	=> $varianItem['nama_jenis_product'],
-            	'image' 	=> $item['image_varian'],
-            	'maxQty'	=> $item['qty_item'],
-				'diskon'	=> $product['diskon']
+    	$reponse = array(
+			'message'	=>	BASEURL.'cart',
+			'error'		=>	FALSE,
+			'code'		=>  200,
+		);
 
-	        );
-	    	$this->cart->insert($insertData);
-		}
-	    	$reponse = array(
-				'message'	=>	'Item berhasil di masukan ke cart',
-				'error'		=>	FALSE,
-				'code'		=>  200,
-			);
 		echo json_encode($reponse);
 	}
 
@@ -173,33 +124,17 @@ class Cart extends CI_Controller {
 	{
 		$post = $this->input->post();
 		if ($post['action'] == "plus") {
-			if ($product['id_product'] == 89) {
-				$data = array(
-					'rowid'	=>$post['rowid'],
-		            'id' => $post['rowid'], 
-		            'qty' => 1, 
-		        );
-			} else {
-				$data = array(
-					'rowid'	=>$post['rowid'],
-		            'id' => $post['rowid'], 
-		            'qty' => $post['qty'] + 1, 
-		        );
-			}
+			$data = array(
+				'rowid'	=>$post['rowid'],
+	            'id' => $post['rowid'], 
+	            'qty' => $post['qty'] + 1, 
+	        );
 		} else {
-			if ($product['id_product'] == 89) {
-				$data = array(
-					'rowid'	=>$post['rowid'],
-		            'id' => $post['rowid'], 
-		            'qty' => 1, 
-		        );
-			} else {
-				$data = array(
-					'rowid'	=>$post['rowid'],
-		            'id' => $post['rowid'], 
-		            'qty' => $post['qty'] - 1, 
-		        );
-			}
+			$data = array(
+				'rowid'	=>$post['rowid'],
+	            'id' => $post['rowid'], 
+	            'qty' => $post['qty'] - 1, 
+	        );
 		}
 	    $this->cart->update($data);
 	    $response = array(
@@ -211,8 +146,6 @@ class Cart extends CI_Controller {
 
 	public function deleteshopingcart($value='')
 	{
-		sessionLogin();
-
 		$post = $this->input->post();
 		$data = array(
 			'rowid'	=>$post['rowid'],
@@ -225,14 +158,11 @@ class Cart extends CI_Controller {
 
 	public function shoopingcart($value='')
 	{
-		sessionLogin();
-
 		$viewData['cart'] = $this->cart->contents();
-		// pre($viewData);
 
-		$this->load->view('global/header');
-		$this->load->view('shoppingcart',$viewData);
-		$this->load->view('global/footer');
+		$this->load->view('components/header');
+		$this->load->view('cart',$viewData);
+		$this->load->view('components/footer');
 	}
 
 	public function showcart($value='')

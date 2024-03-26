@@ -69,12 +69,22 @@ $(document).ready(function() {
             $('#show-qty-product').html(obj.result);
             $("#qty").attr('data-max',obj.qty);
             $(".plus").attr('data-max',obj.qty);
+            $("#idProductItem").val(obj.idProductItem);
+        });
+    });
+
+    $('#buyNow').click(function () {
+        var idProductItem = $('#idProductItem').val();
+        var qty = $('#qty').val();
+        $.post( BASEURL+'cart/buynow', { prodItem: idProductItem, qty: qty }).done(function( data ) {
+            var obj = JSON.parse(data);
+            window.location=obj.message;
         });
     });
 
     $('.slick-brand').slick({
-      autoplay: true,
-      autoplaySpeed: 1000,
+        autoplay: true,
+        autoplaySpeed: 1000,
     });
 
     if ($(this).scrollTop() >= 1) {
@@ -233,7 +243,7 @@ $(document).ready(function() {
                 input.val(parseInt(input.val()) + 1);
                 input.change();
             } else {
-                alert('Choose color and size first');
+                alert('Choose color and size first/Batas Maksimal');
             }
 
             return false;

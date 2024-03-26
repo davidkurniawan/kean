@@ -59,7 +59,7 @@ function sessionLogin()
 function productCART($value='')
 {
     $CI =& get_instance();
-    $data = $CI->GlobalModel->queryManualRow('SELECT * FROM product_item pi JOIN product pt ON pi.id_product=pt.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product WHERE pi.product_item_id="'.$value.'"');
+    $data = $CI->GlobalModel->queryManualRow('SELECT * FROM product_item pi JOIN product pt ON pi.id_product=pt.id_product WHERE pi.product_item_id="'.$value.'"');
     return $data;
 }
 

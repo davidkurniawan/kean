@@ -25,7 +25,6 @@ class Product extends CI_Controller {
 		$viewData['imageProduct'] = $this->GlobalModel->getData('image_product',array('id_product'=>84));
 		$viewData['productVarian'] = $this->GlobalModel->queryManual('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product WHERE pi.kategori_item_product =2 AND pi.id_product=84 ');
 		$viewData['productRelated'] = $this->GlobalModel->getDataSortLimit('product',array('status_product'=>0),'nama_product','DESC',4);
-		// pre($viewData);
 
 		$this->load->view('components/header',$data);
 		$this->load->view('product/product-detail',$viewData);
@@ -84,7 +83,8 @@ class Product extends CI_Controller {
 
 		$response = array(
 			'result' 	=> "Tersisa ".$data['qty_item']." Buah",
-			'qty'		=> $data['qty_item']
+			'qty'		=> $data['qty_item'],
+			'idProductItem'	=>	$data['product_item_id']
 		);
 
 		echo json_encode($response);
