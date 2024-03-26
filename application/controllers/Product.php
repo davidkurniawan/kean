@@ -7,7 +7,7 @@ class Product extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function index()
+	public function show($param,$paramTwo)
 	{
 
 		$data = [
@@ -19,15 +19,14 @@ class Product extends CI_Controller {
 			"navbar" => (($this->session->userdata('page_session') == "reseller")?"":"blue")
 
 		];
-		
-		$viewData['showallproduct'] = $this->GlobalModel->getData('product',array('status_product'=>0));
-		$viewData['productfirst'] = $this->GlobalModel->getDataRow('product',array('id_product'=>84));
-		$viewData['imageProduct'] = $this->GlobalModel->getData('image_product',array('id_product'=>84));
-		$viewData['productVarian'] = $this->GlobalModel->queryManual('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product WHERE pi.kategori_item_product =2 AND pi.id_product=84 ');
-		$viewData['productRelated'] = $this->GlobalModel->getDataSortLimit('product',array('status_product'=>0),'nama_product','DESC',4);
+		$kategori = $this->GlobalModel->getDataRow('product_category',array('slug'=>$param));
+		$subkategori = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$paramTwo));
+
+
+		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator WHERE status_product="0" AND id_product_category="'.$kategori['id_product_category'].'" AND id_productsub_category="'.$subkategori['id_productsub_category'].'" ORDER BY p.created_date DESC');
 
 		$this->load->view('components/header',$data);
-		$this->load->view('product/product-detail',$viewData);
+		$this->load->view('product/product-show',$viewData);
 		$this->load->view('components/footer');
 		
 	}

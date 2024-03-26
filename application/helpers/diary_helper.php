@@ -17,6 +17,20 @@ function language($lang)
     }
 }
 
+function kategori($value='')
+{
+    $CI =& get_instance();
+    $data = $CI->GlobalModel->getData('product_category',null);
+    return $data;
+}
+
+function subkategori($value='')
+{
+    $CI =& get_instance();
+    $data = $CI->GlobalModel->getData('productsub_category',array('id_product_category'=>$value));
+    return $data;
+}
+
 function rupiah($angka){
     
     $hasil_rupiah = "Rp " . number_format($angka,2,',','.');

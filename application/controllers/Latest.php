@@ -20,11 +20,7 @@ class Latest extends CI_Controller {
 
 		];
 		
-		$viewData['showallproduct'] = $this->GlobalModel->getData('product',array('status_product'=>0));
-		$viewData['productfirst'] = $this->GlobalModel->getDataRow('product',array('id_product'=>84));
-		$viewData['imageProduct'] = $this->GlobalModel->getData('image_product',array('id_product'=>84));
-		$viewData['productRelated'] = $this->GlobalModel->getDataSortLimit('product',array('status_product'=>0),'nama_product','DESC',4);
-		// pre($viewData);
+		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator ORDER BY p.created_date DESC');
 
 		$this->load->view('components/header',$data);
 		$this->load->view('latest',$viewData);

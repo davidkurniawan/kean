@@ -115,24 +115,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo BASEURL.'latest' ?>">LATEST</a>
                 </li>
+                <?php foreach (kategori() as $key => $kat): ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    APPAREL
+                    <a class="nav-link <?php if (!empty(subkategori($kat['id_product_category']))): ?> dropdown-toggle <?php endif ?>"
+                    <?php if (!empty(subkategori($kat['id_product_category']))): ?>
+                         role="button" data-bs-toggle="dropdown" aria-expanded="true" 
+                    <?php endif ?>
+                        href="<?php echo $kat['slug'] ?>" >
+                    <?php echo strtoupper($kat['name']) ?>
                     </a>
+                    <?php if (!empty(subkategori($kat['id_product_category']))): ?>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">T-SHIRT</a></li>
-                        <li><a class="dropdown-item" href="#">SHIRT</a></li>
+                        <?php foreach (subkategori($kat['id_product_category']) as $key => $sub): ?>
+                            <li><a class="dropdown-item" href="<?php echo BASEURL.'product/'.$kat['slug'].'/'.$sub['slug'] ?>"><?php echo strtoupper($sub['name']) ?></a></li>
+                        <?php endforeach ?>
                     </ul>
+                    <?php endif ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FOOTWEAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SKATEBOARDS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ACCESSORIES</a>
-                </li>
+                <?php endforeach ?>
                 <li class="nav-item">
                     <a class="nav-link" href="#">BRANDS</a>
                 </li>
