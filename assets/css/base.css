@@ -1706,7 +1706,18 @@ a.btn-bag {
     text-align: center;
     cursor: pointer;
 }
-
+.number .minus-cart, .number .plus-cart{
+    width:40px;
+    height:40px;
+    background:#FFF;
+    border-radius:0px;
+    padding:8px 5px 8px 5px;
+    border:0.5px solid #404040;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
 .product-detail .total {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;

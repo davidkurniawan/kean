@@ -127,7 +127,7 @@
                     <?php if (!empty(subkategori($kat['id_product_category']))): ?>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php foreach (subkategori($kat['id_product_category']) as $key => $sub): ?>
-                            <li><a class="dropdown-item" href="<?php echo BASEURL.'product/'.$kat['slug'].'/'.$sub['slug'] ?>"><?php echo strtoupper($sub['name']) ?></a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASEURL.'product/category/'.$kat['slug'].'/'.$sub['slug'] ?>"><?php echo strtoupper($sub['name']) ?></a></li>
                         <?php endforeach ?>
                     </ul>
                     <?php endif ?>

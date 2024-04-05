@@ -251,6 +251,46 @@ $(document).ready(function() {
     
     }
 
+    if(document.getElementsByClassName('minus-cart') != null && document.getElementsByClassName('plus-cart') != null) {
+        $(".totalkeun").change(function() {
+            var count = $(this).val();
+            var price = $(this).data('price');
+            var total = price * count;
+            if(price > 0) {
+                $('.totalHarga').text("IDR " + (total/1000).toFixed(3));            
+                console.log($(".totalHarga").text())
+            }else{
+                hitungTotalan()
+            }
+        });
+    
+        $('.items-cart').on('click','.minus-cart',function() {
+
+            var input = $(this).siblings(".qty-cart");
+            var count = parseInt(input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            input.val(count);
+            input.change();
+
+            return false;
+        });
+    
+        $('.items-cart').on('click','.plus-cart',function() {
+            var input = $(this).siblings(".qty-cart");
+            var countQty = parseInt(input.val()) + 1;
+            var getMaxQty = $(this).data('max');
+            if(countQty <= getMaxQty){
+                input.val(parseInt(input.val()) + 1);
+                input.change();
+            } else {
+                alert('Choose color and size first/Batas Maksimal');
+            }
+
+            return false;
+        });
+    
+    }
+
     if(document.getElementById('flexCheckCartItems') != null) {
         $('#flexCheckCartItems').change(function() {
             $('.check-item').prop("checked", this.checked);             

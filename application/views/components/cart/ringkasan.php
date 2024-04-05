@@ -1,3 +1,4 @@
+
 <!-- CART ISI -->
 <div class="row g-5 w-100 mt-0 mt-lg-5 mb-4 mx-0 text-start">
     <div class="col-12 col-lg-7">
@@ -9,7 +10,7 @@
                     Pilih Semua
                 </label>
             </div> -->
-            <div class="d-flex align-content-center flex-wrap mt-3 items mt-lg-4 pt-3 pt-lg-4">
+            <div class="d-flex align-content-center flex-wrap mt-3 items items-cart mt-lg-4 pt-3 pt-lg-4">
 
                 <?php $qty = 0; foreach ($this->cart->contents() as $key => $cart): ?>
                     <?php $qty += $cart['qty']; ?>
@@ -25,9 +26,9 @@
                             <div class="action d-flex justify-content-start justify-content-lg-end flex-wrap w-100">
                                 <button type="button" class="btn btn-transparent btn-trash order-2 order-lg-1" data-rowid="<?php echo $key ?>"><i class="bi bi-trash"></i></button>
                                 <div class="number order-1 order-lg-2">
-                                    <button class="minus" data-proditem="<?php echo $cart['id'] ?>" data-rowid="<?php echo $key ?>">-</button>
-                                    <input type="text" value="<?php echo $cart['qty'] ?>" id="qty" readonly/>
-                                    <button class="plus" data-proditem="<?php echo $cart['id'] ?>" data-rowid="<?php echo $key ?>" data-max="<?php echo productCART($cart['id'])['qty_item'] ?>">+</button>
+                                    <button class="minus-cart" data-proditem="<?php echo $cart['id'] ?>" data-rowid="<?php echo $key ?>">-</button>
+                                    <input type="text" value="<?php echo $cart['qty'] ?>" class="qty-cart" readonly/>
+                                    <button class="plus-cart" data-proditem="<?php echo $cart['id'] ?>" data-rowid="<?php echo $key ?>" data-max="<?php echo productCART($cart['id'])['qty_item'] ?>">+</button>
                                 </div>                                    
                             </div>
                         </div>
@@ -59,7 +60,8 @@
         $('.plus').on('click', function (e) {            
             var id = $(this).data('proditem');
             var rowid = $(this).data('rowid');
-            var qty = $("#qty").val();
+            alert(rowid);
+            var qty = $(".qty-cart").val();
 
             var countQty = parseInt(qty) + 1;
             var getMaxQty = $(this).data('max');
@@ -75,7 +77,7 @@
         $('.minus').on('click', function (e) {            
             var id = $(this).data('proditem');
             var rowid = $(this).data('rowid');
-            var qty = $("#qty").val();
+            var qty = $(".qty-cart").val();
             $.post( "<?php echo BASEURL.'cart/updateshopingcart' ?>", { qty:qty, id: id, rowid:rowid, action:"min" })
               .done(function( data ) {
                 var jsonObj = JSON.parse(data);
