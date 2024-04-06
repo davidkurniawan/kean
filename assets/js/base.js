@@ -46,10 +46,10 @@ function previewFile(){
     });
 
 })(jQuery);
-
+const BASEURL = "http://localhost/kean/";
 $(document).ready(function() {
 
-    const BASEURL = "http://localhost/kean/";
+    
 
     $('.color-product').click(function () {
         var dataidProd = $(this).data('idprod');
@@ -297,8 +297,48 @@ $(document).ready(function() {
         });
     }    
 
+    var limit = 8;
+    var start = 0;
+    load_page(limit,start, false);
+
+    $(window).scroll(function(){
+        limit++;
+        if ($('#dinamyc-product').scrollTop() + $('#dinamyc-product').height() > $('#dinamyc-product').height() - 100 ) {
+            load_page(limit,start, false);
+        }
+    });
 
 });
+
+function load_page(limit,start,loading) {
+    if(loading == false){
+        loading=true;
+        $.ajax({
+            url: BASEURL+'latest/infiniteData',
+            type:'post',
+            data: {
+                limit:limit,
+                start:start
+            },
+            beforeSend: function (data) {
+                $('#ajax-loader').show();
+            }
+        }).done(function (data) {
+            if (data == '') {
+
+                $('#ajax-loader').html("<h5>Not Found ...</h5>");
+
+                loading = true;
+
+            }
+            $('#ajax-loader').hide();
+            loading = false;
+            $('#dinamyc-product').html(data);
+        }).fail(function (jqXHR, ajaxOptions, thrownError) {
+            $('#ajax-loader').hide();
+        })
+    }
+}
 
 function hitungTotalan() {
     var total = 0;
