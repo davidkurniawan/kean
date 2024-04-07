@@ -1,5 +1,5 @@
 <?php foreach ($showallproduct as $key => $produk){ ?>
-	<div class="col-lg-3 p-4">
+	<div class="col-lg-3 col-md-4 col-6 p-4">
 		<div class="card">
 			<a href="<?php echo BASEURL.'product/detail/'.$produk['url_product'] ?>">
 				<img src="<?php echo BASEBACK.$produk['product_image_front'] ?>" class="img-fluid"> 

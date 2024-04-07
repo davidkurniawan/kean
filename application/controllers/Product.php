@@ -92,9 +92,9 @@ class Product extends CI_Controller {
 		$limit = $this->input->post('limit');
 		$start = $this->input->post('start');
 
-		$kategori = $this->input->post('category');
-		$subkategori = $this->input->post('subcategory');
-		$sort = $this->input->post('sort');
+		$kategori = $this->db->escape_str($this->input->post('category',TRUE));
+		$subkategori = $this->db->escape_str($this->input->post('subcategory',TRUE));
+		$sort = $this->db->escape_str($this->input->post('sort',TRUE));
 
 		$kategoriArr = $this->GlobalModel->getDataRow('product_category',array('slug'=>$kategori));
 		$subkategoriArr = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$subkategori));

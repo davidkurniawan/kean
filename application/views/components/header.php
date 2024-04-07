@@ -140,9 +140,10 @@
                     <a class="nav-link" href="<?php echo BASEURL.'news' ?>">NEWS</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <div class="btn-group option-header" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn "><i class="bi bi-search"></i></button>
+            <form class="d-flex" action='<?php echo BASEURL.'search' ?>' method='GET'>
+                <input type="text" class="form-control" name="keyword" id="searchYouWantText" placeholder="SEARCH KEY">
+                <div class="btn-group option-header" role="group" aria-label="Basic  example">
+                    <button type="button" class="btn" id="btnsearchYouWant"><i class="bi bi-search"></i></button>
                     <button type="button" class="btn "><i class="bi bi-person"></i></button>
                     <button type="button" class="btn "><i class="bi bi-cart"></i></button>
                 </div>

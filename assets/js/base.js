@@ -313,6 +313,14 @@ $(document).ready(function() {
         }
     });
 
+    $('#btnsearchYouWant').click(function () {
+        var searchVal = $('#searchYouWantText').val();
+        $.post( BASEURL+"search/keyword", { keyword: searchVal })
+            .done(function( data ) {
+            window.location = data;
+        });
+    });
+
 });
 
 function load_page(limit,start,category, subcategory, sort,loading) {

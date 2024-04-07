@@ -3393,3 +3393,7 @@ a:hover {
 .section-header p {
   margin-bottom: 0;
 }
+
+.option-header button {
+    border-color: transparent !important;
+}
