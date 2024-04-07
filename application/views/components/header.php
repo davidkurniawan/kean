@@ -121,7 +121,7 @@
                     <?php if (!empty(subkategori($kat['id_product_category']))): ?>
                          role="button" data-bs-toggle="dropdown" aria-expanded="true" 
                     <?php endif ?>
-                        href="<?php echo $kat['slug'] ?>" >
+                        href="<?php echo BASEURL.'product/category/'.$kat['slug'] ?>" >
                     <?php echo strtoupper($kat['name']) ?>
                     </a>
                     <?php if (!empty(subkategori($kat['id_product_category']))): ?>

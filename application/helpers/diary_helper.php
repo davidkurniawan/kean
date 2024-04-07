@@ -429,4 +429,42 @@ function cekTurnPayment($value='')
     $cekTurn = $CI->GlobalModel->getDataRow('turn_payment',array('id_turn_payment'=>1));
     return $cekTurn['status_turn_payment'];
 }
+
+function insertdataview($title='',$idPost='',$totView='',$userId='')
+{
+    $CI =& get_instance();
+    $userId = GetIp();
+    $getHistory = $CI->GlobalModel->getDataRow('get_view_history',array('id_user'=>$userId,'flag'=>$title,'id_flag'=>$idPost));
+    if (empty($getHistory)) {
+        $userId = (empty($userId)) ? GetIp():$userId;
+        $CI->GlobalModel->insertData('get_view_history',array('id_user'=>$userId,'flag'=>$title,'id_flag'=>$idPost));
+        $toView = $totView+1;
+        if ($title == "product") {
+            $getPost = $CI->GlobalModel->updateData('product',array('id_product'=>$idPost),array('view'=>$toView));
+        } else if ($title == 'news') {
+            $getPost = $CI->GlobalModel->updateData('news',array('news'=>$idPost),array('view'=>$toView));
+        }
+    }
+}
+
+function GetIp(){
+//IP ADDRESS
+   $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+       $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+    $AgentIp = $ipaddress;
+    return $AgentIp;
+}
 ?>

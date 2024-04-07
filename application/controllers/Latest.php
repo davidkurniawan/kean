@@ -26,15 +26,4 @@ class Latest extends CI_Controller {
 		
 	}
 
-	public function infiniteData($value='')
-	{
-		$limit = $this->input->post('limit');
-		$start = $this->input->post('start');
-
-		$countData =  $this->GlobalModel->queryManual('SELECT COUNT(*) as count FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator ORDER BY p.created_date DESC ');
-		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator ORDER BY p.created_date DESC limit '.$start.','.$limit.' ');
-
-		echo $this->load->view('product/product-list',$viewData,TRUE);
-	}
-
 }

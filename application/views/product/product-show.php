@@ -58,16 +58,16 @@
 		                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Sorting </a>
 		                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 		                        <li>
-		                            <a class="dropdown-item" href="#">POPULAR</a>
+		                            <a class="dropdown-item" href="?sort=newstock">NEW IN STOCK</a>
 		                        </li>
 		                        <li>
-		                            <a class="dropdown-item" href="#">NEW IN STOCK</a>
+		                            <a class="dropdown-item" href="?sort=popular">POPULAR</a>
 		                        </li>
 		                        <li>
-		                            <a class="dropdown-item" href="#">HIGHEST PRICE <i class="bi bi-arrow-up"></i></a>
+		                            <a class="dropdown-item" href="?sort=highest">HIGHEST PRICE <i class="bi bi-arrow-up"></i></a>
 		                        </li>
 		                        <li>
-		                            <a class="dropdown-item" href="#">LOWEST PRICE <i class="bi bi-arrow-down"></i></a>
+		                            <a class="dropdown-item" href="?sort=lowest">LOWEST PRICE <i class="bi bi-arrow-down"></i></a>
 		                        </li>
 		                    </ul>
 		                </li>
@@ -82,22 +82,14 @@
 	</section>
 	<section class="product-list product">
 		<div class="container-fluid">
-			<div class="row" id="dinamyc-product">
+			<div class="product-category-infinite">
+				<div id="category-infinite" data-slug='<?php echo $this->uri->segment(3) ?>'></div>
+				<div id="subcategory-infinite" data-slug='<?php echo $this->uri->segment(4) ?>'></div>
+				<div id="sort-infinite" data-slug='<?php if (!empty($this->input->get('sort'))) { echo $this->input->get('sort'); } ?>'></div>
+			</div>
+			<div class="row active" id="dinamyc-product">
 				
 			</div>
-			<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
 		</div>
 	</section>
 </div>

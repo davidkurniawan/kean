@@ -7,7 +7,7 @@ class Product extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function show($param,$paramTwo)
+	public function show($param='',$paramTwo='')
 	{
 
 		$data = [
@@ -19,14 +19,9 @@ class Product extends CI_Controller {
 			"navbar" => (($this->session->userdata('page_session') == "reseller")?"":"blue")
 
 		];
-		$kategori = $this->GlobalModel->getDataRow('product_category',array('slug'=>$param));
-		$subkategori = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$paramTwo));
-
-
-		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator WHERE status_product="0" AND id_product_category="'.$kategori['id_product_category'].'" AND id_productsub_category="'.$subkategori['id_productsub_category'].'" ORDER BY p.created_date DESC');
 
 		$this->load->view('components/header',$data);
-		$this->load->view('product/product-show',$viewData);
+		$this->load->view('product/product-show');
 		$this->load->view('components/footer');
 		
 	}
@@ -34,6 +29,7 @@ class Product extends CI_Controller {
 	public function detail($productUrl='',$page="")
 	{
 		$this->session->set_userdata('page_session',$page);
+
 		
 		$data = [
 
@@ -51,6 +47,8 @@ class Product extends CI_Controller {
 		$viewData['productfirst'] = $this->GlobalModel->getDataRow('product',array('url_product'=>$productUrl));
 		$viewData['imageProduct'] = $this->GlobalModel->getData('image_product',array('id_product'=>$viewData['productfirst']['id_product']));
 		$viewData['productItem'] = $this->GlobalModel->getData('product_item',array('id_product'=>$viewData['productfirst']['id_product']));
+		
+		insertdataview('product',$viewData['productfirst']['id_product'],$viewData['productfirst']['view'],$this->session->userdata('userIdvi'));
 		
 		$this->load->view('components/header',$data);
 		$this->load->view('product/product-detail',$viewData);
@@ -87,5 +85,51 @@ class Product extends CI_Controller {
 		);
 
 		echo json_encode($response);
+	}
+
+	public function infiniteData($value='')
+	{
+		$limit = $this->input->post('limit');
+		$start = $this->input->post('start');
+
+		$kategori = $this->input->post('category');
+		$subkategori = $this->input->post('subcategory');
+		$sort = $this->input->post('sort');
+
+		$kategoriArr = $this->GlobalModel->getDataRow('product_category',array('slug'=>$kategori));
+		$subkategoriArr = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$subkategori));
+
+		$kategoriInfinite = '';
+		if (!empty($kategori)) {
+			$kategoriInfinite .= 'AND id_product_category="'.$kategoriArr['id_product_category'].'" ';
+		}
+		if (!empty($kategori)) {
+			$kategoriInfinite .= 'AND id_productsub_category="'.$subkategoriArr['id_productsub_category'].'"';
+		}
+
+		$sortSql ='';
+		if (!empty($sort) && $sort == 'newstock') {
+			$sortSql .= 'ORDER BY p.created_date DESC';
+		} else if (!empty($sort) && $sort == 'popular') {
+			$sortSql .= 'ORDER BY p.view DESC';
+		} else if (!empty($sort) && $sort == 'highest') {
+			$sortSql .= 'ORDER BY p.harga DESC';
+		} else if (!empty($sort) && $sort == 'lowest') {
+			$sortSql .= 'ORDER BY p.harga ASC';
+		} else {
+			$sortSql .= 'ORDER BY p.created_date DESC';
+		}
+
+		$countData =  $this->GlobalModel->queryManual('SELECT COUNT(*) as count FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator WHERE p.status_product="0" '.$kategoriInfinite.' ORDER BY p.created_date DESC ');
+
+		if ($limit <= $countData[0]['count']) {
+			$result['code'] = '200';
+		} else {
+			$result['code'] = '400';
+		}
+
+		$viewData['showallproduct'] = $this->GlobalModel->queryManual('SELECT * FROM product p JOIN administrator b ON p.id_administrator=b.id_administrator WHERE p.status_product="0" '.$kategoriInfinite.' '.$sortSql.' limit '.$start.','.$limit.' ');
+		$result['html'] = $this->load->view('product/product-list',$viewData,TRUE);
+		echo json_encode($result);
 	}
 }

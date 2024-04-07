@@ -82,7 +82,11 @@
 	</section>
 	<section class="product-list product">
 		<div class="container-fluid">
-			<div class="row" id="dinamyc-product">
+			<div class="product-category-infinite">
+				<div id="category-infinite" data-slug=''></div>
+				<div id="subcategory-infinite" data-slug=''></div>
+			</div>
+			<div class="row active" id="dinamyc-product">
 				
 			</div>
 			<div class="text-center justify-content-center" id="ajax-loader">

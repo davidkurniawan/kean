@@ -299,41 +299,50 @@ $(document).ready(function() {
 
     var limit = 8;
     var start = 0;
-    load_page(limit,start, false);
+    var category = $('#category-infinite').data('slug');
+    var subcategory = $('#subcategory-infinite').data('slug');
+    var sort = $('#sort-infinite').data('slug');
+    load_page(limit, start, category, subcategory, sort, false);
 
     $(window).scroll(function(){
         limit++;
         if ($('#dinamyc-product').scrollTop() + $('#dinamyc-product').height() > $('#dinamyc-product').height() - 100 ) {
-            load_page(limit,start, false);
+            if ($('#dinamyc-product').hasClass("active")) {
+                load_page(limit,start, category, subcategory, sort, false);
+            } 
         }
     });
 
 });
 
-function load_page(limit,start,loading) {
+function load_page(limit,start,category, subcategory, sort,loading) {
     if(loading == false){
         loading=true;
         $.ajax({
-            url: BASEURL+'latest/infiniteData',
+            url: BASEURL+'product/infiniteData',
             type:'post',
             data: {
                 limit:limit,
-                start:start
+                start:start,
+                category:category,
+                subcategory:subcategory,
+                sort:sort,
             },
             beforeSend: function (data) {
                 $('#ajax-loader').show();
             }
         }).done(function (data) {
-            if (data == '') {
+            var myObj = JSON.parse(data);
 
+            if (myObj.code == 200) {
                 $('#ajax-loader').html("<h5>Not Found ...</h5>");
-
                 loading = true;
-
+            } else {
+                $('#dinamyc-product').removeClass('active');
             }
             $('#ajax-loader').hide();
             loading = false;
-            $('#dinamyc-product').html(data);
+            $('#dinamyc-product').html(myObj.html);
         }).fail(function (jqXHR, ajaxOptions, thrownError) {
             $('#ajax-loader').hide();
         })
