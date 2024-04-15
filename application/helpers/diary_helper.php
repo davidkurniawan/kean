@@ -437,7 +437,7 @@ function insertdataview($title='',$idPost='',$totView='',$userId='')
     $getHistory = $CI->GlobalModel->getDataRow('get_view_history',array('id_user'=>$userId,'flag'=>$title,'id_flag'=>$idPost));
     if (empty($getHistory)) {
         $userId = (empty($userId)) ? GetIp():$userId;
-        $CI->GlobalModel->insertData('get_view_history',array('id_user'=>$userId,'flag'=>$title,'id_flag'=>$idPost));
+        $CI->GlobalModel->insertData('get_view_history',array('id_user'=>$userId,'flag'=>$title,'id_flag'=>$idPost,'created_date'=>date('Y-m-d H:i:s')));
         $toView = $totView+1;
         if ($title == "product") {
             $getPost = $CI->GlobalModel->updateData('product',array('id_product'=>$idPost),array('view'=>$toView));
