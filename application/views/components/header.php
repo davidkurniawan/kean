@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="<?php echo ASSETS ?>css/base.css" rel="stylesheet">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo ASSETS.'css/slick/slick-themes.css' ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link href="<?php echo ASSETS ?>plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
     <title>KEAN</title>
@@ -144,8 +144,8 @@
                 <input type="text" class="form-control" name="keyword" id="searchYouWantText" placeholder="SEARCH KEY">
                 <div class="btn-group option-header" role="group" aria-label="Basic  example">
                     <button type="button" class="btn" id="btnsearchYouWant"><i class="bi bi-search"></i></button>
-                    <button type="button" class="btn "><i class="bi bi-person"></i></button>
-                    <button type="button" class="btn "><i class="bi bi-cart"></i></button>
+                    <a href="<?php echo BASEURL.'profile' ?>" class="btn "><i class="bi bi-person"></i></a>
+                    <a href="<?php echo BASEURL.'cart' ?>" class="btn "><i class="bi bi-cart"></i></a>
                 </div>
             </form>
         </div>

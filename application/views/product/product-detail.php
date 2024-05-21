@@ -19,13 +19,14 @@
                     <div class="d-flex">
                         <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
                             <div class="product-thumbs-track" style="height: 500px;">
-                                <div class="pt active" data-imgbigurl="<?php echo BASEBACK.$productfirst['product_image_front'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" alt="">
-                                        <a href="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" class="glightbox preview-link"></a>
-                                    </div>
                                 <?php foreach ($imageProduct as $key => $img): ?>
-                                    <div class="pt" data-imgbigurl="<?php echo BASEBACK.$img['source_image_product'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$img['source_image_product'] ?>" alt="">
-                                        <a href="<?php echo BASEBACK.$img['source_image_product'] ?>" class="glightbox preview-link"></a>
-                                    </div>
+                                    <?php if ($key == 0){ ?>
+                                        <div class="pt active" data-imgbigurl="<?php echo BASEBACK.$img['source_image_product'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$img['source_image_product'] ?>" alt="">
+                                        </div>
+                                    <?php } else { ?>
+                                        <div class="pt" data-imgbigurl="<?php echo BASEBACK.$img['source_image_product'] ?>"><img class="img-fluid" src="<?php echo BASEBACK.$img['source_image_product'] ?>" alt="">
+                                        </div>
+                                    <?php } ?>
                                 <?php endforeach ?>
                             </div>
                         </div>
@@ -33,13 +34,20 @@
                              <a href="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" class="glightbox preview-link">
                                 <img class="img-fluid" src="<?php echo BASEBACK.$productfirst['product_image_front'] ?>" alt="">
                              </a>
+                             <div class="d-none">
+                                <?php foreach ($imageProduct as $key => $img): ?>
+                                    <?php if ($key > 0){ ?>
+                                         <a href="<?php echo BASEBACK.$img['source_image_product'] ?>" class="glightbox preview-link"></a>
+                                     <?php } ?>
+                                <?php endforeach ?>
+                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
                     <div class="product-description-card">
                         <div class="product-title">POLAR RIDER T-SHIRT (BLACK)</div>
-                        <div class="product-price"><div class="currency me-2">Rp</div><div class="value">245.000</div></div>
+                        <div class="product-price"><div class="currency me-2">Rp</div><div class="value harga-product"><?php echo number_format($productfirst['harga']) ?></div></div>
                         <hr>
                             <div class="fw-size-choose">
                                 <div class="color mb-2">COLORS</div>
@@ -254,7 +262,7 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
-   
+    
     $('#BuyNow').click(function (e) {
         e.preventDefault();
         var prodItem = $(".product-item-val:checked").val();

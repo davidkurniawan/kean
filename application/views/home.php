@@ -7,7 +7,9 @@
 				<div class="col-lg-9 col-sm-12 mb-3">
 					<div class="banner-primary">
 						<?php foreach ($banner as $key => $ban): ?>
-							<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+							<div>
+								<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+							</div>
 						<?php endforeach ?>
 					</div>
 				</div>
@@ -263,4 +265,8 @@
 		</div>
 	</section>
 </div>
-
+<script type="text/javascript">
+	$(document).ready(function () {
+		
+	});
+</script>

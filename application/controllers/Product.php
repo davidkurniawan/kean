@@ -83,6 +83,7 @@ class Product extends CI_Controller {
 		$response = array(
 			'result' 	=> "Tersisa ".$data['qty_item']." Buah",
 			'qty'		=> $data['qty_item'],
+			'harga'		=>	number_format($data['harga']),
 			'idProductItem'	=>	$data['product_item_id']
 		);
 

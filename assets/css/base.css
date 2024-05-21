@@ -3397,3 +3397,30 @@ a:hover {
 .option-header button {
     border-color: transparent !important;
 }
+
+.banner-primary .slick-dots {
+    bottom: 0px;
+    display: flex;
+}
+
+.banner-primary .slick-dots li {
+    margin: 0 2px;
+}
+
+.banner-primary .slick-dots li.slick-active button {
+    color: yellow;
+    background-color: yellow;
+    opacity: .75;
+}
+
+.banner-primary .slick-dots li {
+    width: 100% !important;
+    opacity: .75;
+    height: 10px;
+}
+
+.banner-primary .slick-dots li button {
+    width: 100% !important;
+    height: 10px !important;
+    opacity: .75;
+}

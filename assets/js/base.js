@@ -45,11 +45,25 @@ function previewFile(){
         boxzoom:false
     });
 
+
+
 })(jQuery);
 const BASEURL = "http://localhost/kean/";
 $(document).ready(function() {
+    $('.banner-primary').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
 
-    
+    $('.product-thumbs-track .pt').click(function () {
+        $('.pt').removeClass('active');
+        $(this).addClass('active');
+
+        var imgurl = $(this).data('imgbigurl');
+        $('.product-pic-zoom img').attr('src',imgurl);
+    });
 
     $('.color-product').click(function () {
         var dataidProd = $(this).data('idprod');
@@ -68,6 +82,7 @@ $(document).ready(function() {
             var obj = JSON.parse(data);
             $('#show-qty-product').html(obj.result);
             $("#qty").attr('data-max',obj.qty);
+            $('.harga-product').text(obj.harga);
             $(".plus").attr('data-max',obj.qty);
             $("#idProductItem").val(obj.idProductItem);
         });
@@ -265,21 +280,31 @@ $(document).ready(function() {
         });
     
         $('.items-cart').on('click','.minus-cart',function() {
-
+            var rowid = $(this).data('rowid');
             var input = $(this).siblings(".qty-cart");
+            var inputVal = $(this).siblings(".qty-cart").val();
             var count = parseInt(input.val()) - 1;
+            $.post( BASEURL+"cart/updateshopingcart", { action: "minus", rowid: rowid, qty:inputVal}).done(function( data ) {
+                var myObj = JSON.parse(data);
+                $('.totalHarga').text(myObj.totalharga);
+            });
             count = count < 1 ? 1 : count;
             input.val(count);
             input.change();
-
             return false;
         });
     
         $('.items-cart').on('click','.plus-cart',function() {
+            var rowid = $(this).data('rowid');
             var input = $(this).siblings(".qty-cart");
+            var inputVal = $(this).siblings(".qty-cart").val();
             var countQty = parseInt(input.val()) + 1;
             var getMaxQty = $(this).data('max');
             if(countQty <= getMaxQty){
+                $.post( BASEURL+"cart/updateshopingcart", { action: "plus", rowid: rowid, qty:inputVal }).done(function( data ) {
+                    var myObj = JSON.parse(data);
+                    $('.totalHarga').text(myObj.totalharga);
+                });
                 input.val(parseInt(input.val()) + 1);
                 input.change();
             } else {

@@ -20,7 +20,6 @@ class Cart extends CI_Controller {
 			"navbar" => "white"
 
 		];
-		// pre(confirmBiteShipApi("638f5c900de0f8507fbbc91a"));
 		$this->load->view('components/header',$data);
 		$this->load->view('cart');
 		$this->load->view('components/footer');
@@ -53,39 +52,23 @@ class Cart extends CI_Controller {
 					'code'		=>  400,
 				);
 			} else {
-				if ($product['id_product'] == 89) {
-					foreach ($this->cart->contents() as $key => $valueCart) {
-						$insertData = array(
-							'rowid'	=>	$key,
-				            'id'   	=> $post['prodItem'],
-				            'sku'	=> $item['sku_item_product'],
-				            'qty'    	=> 1,
-				            'price'    	=> $product['harga_product'],
-				            'name'    	=> $varianItem['nama_jenis_product'],
-				            'image' 	=> $item['image_varian'],
-				            'maxQty'	=> $item['qty_item'],
-				            'diskon'	=> $product['diskon']
-				        );
-			    		$this->cart->update($insertData);
-					}
-				} else {
-					$insertData = array(
-			            'id'   	=> $post['prodItem'],
-			            'sku'	=> $item['sku_item_product'],
-			            'qty'    	=> $post['totalVal'],
-			            'price'    	=> $product['harga_product'],
-			            'name'    	=> $varianItem['nama_jenis_product'],
-			            'image' 	=> $item['image_varian'],
-			            'maxQty'	=> $item['qty_item'],
-			            'diskon'	=> $product['diskon']
-			        );
-			    	$this->cart->insert($insertData);
-				    $reponse = array(
-						'message'	=>	'Item berhasil di masukan ke cart',
-						'error'		=>	FALSE,
-						'code'		=>  200,
-					);
-				}
+				$insertData = array(
+		            'id'   	=> $post['prodItem'],
+		            'sku'	=> $item['sku_item_product'],
+		            'qty'    	=> $post['totalVal'],
+		            'size'		=>	$item['size'],
+		            'price'    	=> $product['harga_product'],
+		            'name'    	=> $varianItem['nama_jenis_product'],
+		            'image' 	=> $item['image_varian'],
+		            'maxQty'	=> $item['qty_item'],
+		            'diskon'	=> $product['diskon']
+		        );
+		    	$this->cart->insert($insertData);
+			    $reponse = array(
+					'message'	=>	'Item berhasil di masukan ke cart',
+					'error'		=>	FALSE,
+					'code'		=>  200,
+				);
 			}
 		}
 		echo json_encode($reponse);
@@ -102,6 +85,7 @@ class Cart extends CI_Controller {
         	'id'   	=> $item['product_item_id'],
         	'sku'	=> $item['sku'],
         	'qty'    	=> $post['qty'],
+        	'size'    	=> $item['size'],
         	'price'    	=> $item['harga'],
         	'name'    	=> $product['nama_product'],
         	'image' 	=> $product['product_image_front'],
@@ -159,7 +143,6 @@ class Cart extends CI_Controller {
 	public function shoopingcart($value='')
 	{
 		$viewData['cart'] = $this->cart->contents();
-
 		$this->load->view('components/header');
 		$this->load->view('cart',$viewData);
 		$this->load->view('components/footer');

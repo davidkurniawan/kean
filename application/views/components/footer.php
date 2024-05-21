@@ -89,6 +89,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script src="<?php echo ASSETS ?>plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo ASSETS ?>js/base.js"></script>   
 
     <?php
         if(isset($_GET["page"]) && $_GET["page"] == "product") {
@@ -96,7 +97,6 @@
         }
     ?> 
 
-    <script src="<?php echo ASSETS ?>js/base.js"></script>   
 
     <script type="text/javascript">
         jQuery(document).ready(function() {

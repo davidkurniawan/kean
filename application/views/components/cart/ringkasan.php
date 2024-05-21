@@ -20,7 +20,7 @@
                         </div>
                         <div class="px-2 order-2 order-lg-3 d-flex align-content-between flex-wrap ps-2 ps-lg-3 h-100">
                             <div class="text">
-                                <h4><?php echo $cart['name'] ?> - <?php echo productCART($cart['id'])['name_color'] ?></h4>
+                                <h4><?php echo $cart['name'] ?> - <?php echo productCART($cart['id'])['name_color'] ?> - <?php echo $cart['size'] ?></h4>
                                 <h2>IDR <?php echo number_format($cart['price']) ?></h2>
                             </div>
                             <div class="action d-flex justify-content-start justify-content-lg-end flex-wrap w-100">
