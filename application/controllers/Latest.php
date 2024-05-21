@@ -20,8 +20,9 @@ class Latest extends CI_Controller {
 
 		];
 
+		$viewData['banner'] = $this->GlobalModel->getDataRow('banner',array('id_banner_category'=>4));
 		$this->load->view('components/header',$data);
-		$this->load->view('latest');
+		$this->load->view('latest',$viewData);
 		$this->load->view('components/footer');
 		
 	}

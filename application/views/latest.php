@@ -1,6 +1,6 @@
 <style type="text/css">
 	.background-image-latest {
-	    background-image: url('<?php echo ASSETS.'img/banner/streetwear02-big-fix.webp' ?>');
+	    background-image: url('<?php echo BASEBACK.$banner['image'] ?>');
 	}
 </style>
 <div class="main">
