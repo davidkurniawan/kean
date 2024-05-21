@@ -20,8 +20,10 @@ class Product extends CI_Controller {
 
 		];
 
+		$viewData['subkategori'] = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$paramTwo));
+
 		$this->load->view('components/header',$data);
-		$this->load->view('product/product-show');
+		$this->load->view('product/product-show',$viewData);
 		$this->load->view('components/footer');
 		
 	}

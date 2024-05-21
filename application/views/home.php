@@ -6,17 +6,18 @@
 			<div class="row">
 				<div class="col-lg-9 col-sm-12 mb-3">
 					<div class="banner-primary">
-						<img src="<?php echo ASSETS.'img/banner/banner1.png' ?>" class="img-fluid">
+						<?php foreach ($banner as $key => $ban): ?>
+							<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+						<?php endforeach ?>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-12">
 					<div class="row">
+						<?php foreach ($bannerRight as $key => $ban): ?>
 						<div class="col-6 col-lg-12 banner-second one mb-2 ">
-							<img src="<?php echo ASSETS.'img/banner/banner2.png' ?>" class="img-fluid">
+							<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
 						</div>
-						<div class="col-6 col-lg-12 banner-second two">
-							<img src="<?php echo ASSETS.'img/banner/banner2.png' ?>" class="img-fluid">
-						</div>
+						<?php endforeach ?>
 					</div>
 				</div>
 			</div>
