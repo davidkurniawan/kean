@@ -28,7 +28,7 @@
 
 	<section class="brand">
 		<div class="container">
-			<div class="slick-brand" data-slick='{"slidesToShow": 7, "slidesToScroll": 1}'>
+			<div class="slick-brand" data-slick='{"slidesToShow": 7, "slidesToScroll": 1}'; >
 				<div class="p-4">
 					<a href="">
 						<img src="<?php echo ASSETS.'img/logobrand/flip.png' ?>" class="img-fluid">
@@ -77,7 +77,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="latest-arrival mt-5 pt-5">
+	<section class="latest-arrival mt-0 mt-lg-5 pt-2 pt-lg-5">
 		<div class="container ">
 			<div class="row">
 				<div class="col-lg-12">
@@ -94,7 +94,7 @@
 		<div class="width-overflow product ms-lg-5 ">
 				<div class="d-flex">
 					<?php foreach ($showallproduct as $key => $produk){ ?>
-						<div class="col-lg-3 p-4">
+						<div class="col-lg-3 p-1 p-lg-4">
 							<div class="card">
 								<a href="<?php echo BASEURL.'product/detail/'.$produk['url_product'] ?>">
 									<img src="<?php echo BASEBACK.$produk['product_image_front'] ?>" class="img-fluid"> 
@@ -265,8 +265,3 @@
 		</div>
 	</section>
 </div>
-<script type="text/javascript">
-	$(document).ready(function () {
-		
-	});
-</script>

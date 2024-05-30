@@ -10,45 +10,25 @@ class User extends CI_Controller {
 	public function daftar()
 	{
 		$post = $this->input->post();
-		$checkEmail = $this->GlobalModel->getDataRow('user_customer',array('email'=>$post['email']));
-		if (empty($checkEmail)) {
-			$config['upload_path']          = './assets/img/ktp/';
-	        $config['allowed_types']        = 'gif|jpg|png|jpeg';
-
-	        $this->load->library('upload', $config);
-
-	        if ( ! $this->upload->do_upload('userfile'))
-	        {
-	        	$this->session->set_flashdata('msg',$this->upload->display_errors());
+		if ($post['password'] == $post['repeatPassword']) {
+			$checkEmail = $this->GlobalModel->getDataRow('user_customer',array('email'=>$post['email']));
+			if (empty($checkEmail)) {
+					$insertData = array(
+						'nama_lengkap'	=>	$post['namaLengkap'],
+						'username'		=>	$post['username'],
+						'phone'			=>	$post['telepon'],
+						'email'			=>	$post['email'],
+						'password'		=>	password_hash($post['password'], PASSWORD_DEFAULT),
+						'created_date'	=>	date('Y-m-d H:i:s'),
+						'ip_public'		=>	$_SERVER['REMOTE_ADDR'],
+					);
+					$this->GlobalModel->insertData('user_customer',$insertData);
+		        	$this->session->set_flashdata('msg',"Selamat!, Register akun Anda berhasil, silakan login.");
+					redirect(BASEURL.'login');
+			} else {
+				$this->session->set_flashdata('msg',"Mohon Maaf email Anda sudah terdaftar!");
 				redirect(BASEURL.'login');
-	        }
-	        else
-	        {
-	        	
-				$insertData = array(
-					'nama'	=>	$post['nama'],
-					'phone'	=>	$post['telepon'],
-					'email'	=>	$post['email'],
-					'alamat'	=>	$post['alamat'],
-					'password'	=>	password_hash($post['password'], PASSWORD_DEFAULT),
-					'file_ktp'	=>	'assets/img/ktp/'.$this->upload->data('file_name'),
-					'created_date'	=>	date('Y-m-d H:i:s'),
-					'user_nik'	=>	$post['nik'],
-					'ref_code'	=>	generateReferenceNumber(),
-					'ip_public'	=>	$_SERVER['REMOTE_ADDR'],
-					'kota'		=>	$post['kota'],
-					'provinsi'	=>	$post['provinsi'],
-					'kecamatan'	=>	$post['kecamatan'],
-					'kelurahan'	=>	$post['kelurahan'],
-					'kode_pos'	=>	$post['kodepos'],
-				);
-				$this->GlobalModel->insertData('user_customer',$insertData);
-	        	$this->session->set_flashdata('msg',"Selamat!, Akun anda sudah berhasil silakan login.");
-				redirect(BASEURL.'login');
-	        }
-		} else {
-			$this->session->set_flashdata('msg',"Mohon Maaf email Anda sudah terdaftar!");
-			redirect(BASEURL.'login');
+			}
 		}
 	}
 

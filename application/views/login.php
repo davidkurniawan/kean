@@ -50,41 +50,46 @@
             </form>
           </div>
           <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-            <form>
-              
+            <form action="<?php echo BASEURL.'user/daftar' ?>" method="POST">
               <!-- Name input -->
               <div data-mdb-input-init="" class="form-outline mb-4 mt-4" data-mdb-input-initialized="true">
-                <label class="form-label" for="registerName" style="margin-left: 0px;">Name</label>
-                <input type="text" id="registerName" class="form-control">
+                <label class="form-label" for="registerName" style="margin-left: 0px;">* Name</label>
+                <input type="text" id="registerName" name="namaLengkap" class="form-control" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Username input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
-                <label class="form-label" for="registerUsername" style="margin-left: 0px;">Username</label>
-                <input type="text" id="registerUsername" class="form-control">
+                <label class="form-label" for="registerUsername" style="margin-left: 0px;">* Username</label>
+                <input type="text" id="registerUsername" name="username" class="form-control" required>
+              <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+              <!-- PhoneNumber input -->
+              <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
+                <label class="form-label" for="registerEmail" style="margin-left: 0px;">* Phone Number</label>
+                <input type="tel" id="PhoneNumber" name="telepon" class="form-control" pattern="[+]{1}[0-9]{11,14}" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Email input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
-                <label class="form-label" for="registerEmail" style="margin-left: 0px;">Email</label>
-                <input type="email" id="registerEmail" class="form-control">
+                <label class="form-label" for="registerEmail" style="margin-left: 0px;">* Email</label>
+                <input type="email" id="registerEmail" name="email" class="form-control" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Password input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
-                <label class="form-label" for="registerPassword" style="margin-left: 0px;">Password</label>
-                <input type="password" id="registerPassword" class="form-control">
+                <label class="form-label" for="registerPassword" style="margin-left: 0px;">* Password</label>
+                <input type="password" id="registerPassword" name="password" class="form-control" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Repeat Password input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
-                <label class="form-label" for="registerRepeatPassword" style="margin-left: 0px;">Repeat password</label>
-                <input type="password" id="registerRepeatPassword" class="form-control">
+                <label class="form-label" for="registerRepeatPassword" style="margin-left: 0px;">* Repeat password</label>
+                <input type="password" id="registerRepeatPassword" name="repeatPassword" class="form-control" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Checkbox -->
               <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked="" aria-describedby="registerCheckHelpText">
+                <input class="form-check-input me-2" type="checkbox" value="aggree" id="registerCheck" name="registerCheckHelpText" checked="" aria-describedby="registerCheckHelpText">
                 <label class="form-check-label" for="registerCheck">
                   I have read and agree to the terms
                 </label>

@@ -430,6 +430,23 @@ input[type="color"]:focus,
         border-bottom: 1px solid #626262;
         padding: 0.5rem 0;
     }
+
+    #dinamyc-product .card-title, .product .card-title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    #dinamyc-product .card-body p, .product .card-body p  {
+        font-size: 14px;
+    }
+
+    #dinamyc-product a, .product a {
+        font-size: 10px;
+    }
+
+    #dinamyc-product .card-body, .product .card-body {
+        padding: 1rem 0 0 1rem;
+    }
 }
 
 
@@ -3424,3 +3441,5 @@ a:hover {
     height: 10px !important;
     opacity: .75;
 }
+
+
