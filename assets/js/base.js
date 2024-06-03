@@ -48,7 +48,7 @@ function previewFile(){
 
 
 })(jQuery);
-const BASEURL = "http://localhost/kean/";
+const BASEURL = "http://localhost/shop/";
 $(document).ready(function() {
     $('.banner-primary').slick({
         dots: true,
