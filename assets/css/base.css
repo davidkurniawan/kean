@@ -2917,14 +2917,22 @@ div.collapse.show .tab-other {
 --------------------------------------------------------------*/
 .post-entry-1 {
   margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid;
+    background-color: white;
+}
+
+.p-5-5 {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .post-entry-1 img {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .post-entry-1 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
@@ -2974,12 +2982,14 @@ div.collapse.show .tab-other {
 }
 
 .trending {
-  border: 1px solid rgba(var(--color-black-rgb), 0.1);
+  border: 1px solid white;
+  background-color: white;
 }
 
 .trending>h3 {
-  color: var(--color-black);
+  background-color: darkred;
   padding: 20px;
+  color: white;
   border-bottom: 1px solid rgba(var(--color-black-rgb), 0.1);
 }
 
@@ -2993,12 +3003,13 @@ div.collapse.show .tab-other {
   margin: 0;
   list-style: none;
   display: block;
+  background-color: darkred;
 }
 
 .trending .trending-post li a {
   display: block;
   padding: 20px;
-  border-bottom: 1px solid rgba(var(--color-black-rgb), 0.1);
+  border-bottom: 1px solid white;
   position: relative;
   overflow: hidden;
 }
@@ -3019,12 +3030,12 @@ div.collapse.show .tab-other {
 }
 
 .trending .trending-post li a .author {
-  color: rgba(var(--color-black-rgb), 0.7);
+  color: white;
   font-weight: 500;
 }
 
 .trending .trending-post li a:hover h3 {
-  color: rgba(var(--color-black-rgb), 1);
+  color: white;
 }
 
 .trending .trending-post li:last-child a {
