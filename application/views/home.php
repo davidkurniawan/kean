@@ -257,7 +257,7 @@
 					</div>
 				</div>
 			</div>
-						<hr style="color:white;">
+			<hr style="color:white;">
 		</div>
 		<div class="container">
 			<div class="row">

@@ -9,7 +9,19 @@ class Productpoints extends CI_Controller {
 
 	public function index()
 	{
+
+		$data = [
+
+			"title" => "Product Points - Shop",
+
+			"metaDescription" => "Products Points",
+
+			"navbar" => (($this->session->userdata('page_session') == "reseller")?"":"blue")
+
+		];
+
 		$viewData['product'] = $this->GlobalModel->getData('produk_poin',null);
+		$viewData['banner'] = $this->GlobalModel->getDataRow('banner',array('id_banner_category'=>5));
 
 		$this->load->view('components/header',$data);
 		$this->load->view('productpoints/product-poin-view',$viewData);
@@ -20,7 +32,7 @@ class Productpoints extends CI_Controller {
 	{
 		$data = [
 
-			"title" => "Product Points - Shop",
+			"title" => "Items Product Points - Shop",
 
 			"metaDescription" => "Products Points",
 

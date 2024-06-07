@@ -3479,3 +3479,42 @@ a:hover {
     height: 100%;
     background: linear-gradient(90deg, hsla(0, 0%, 100%, .85), hsla(0, 0%, 100%, 0) 70%);
 }
+
+.banner-item-points .image-banner-points {
+    height: 500px;
+    padding: 118px 17px 0px 25px;
+    letter-spacing: 9px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-item-points .image-banner-points h3 { 
+    line-height: 40px;
+    position: absolute;
+    bottom: 80px;
+}
+
+.card-rules-points .position-relative .bi-caret-right-fill {
+    position: absolute;
+    right: -40px;
+    top: -15px;
+    font-size: 28px;
+}
+
+.hr-white {
+    opacity: unset;
+    border-color: white;
+    background-color: unset;
+}
+
+.hr-intcode {
+    opacity: unset;
+    background-color: unset;
+    border: 2px solid #ffc107;
+    margin: 0 0 1rem 0;
+}
+
+.note-prod-poin.position-relative button {
+    width: 100%;
+    border-radius: 0;
+}
