@@ -127,18 +127,20 @@
 		</div>
 		<div class="width-overflow product ms-lg-5">
 				<div class="d-flex">
-					<?php for ($i=0; $i < 10; $i++) { ?>
-						<div class="col-lg-3 p-4">
+					<?php foreach($popularproduct as $key => $popular) { ?>
+						<div class="col-lg-3 p-1 p-lg-4">
 							<div class="card">
-								<img src="<?php echo ASSETS.'img/product/one.jpg' ?>">
-								<div class="card-body">
-									<h5 class="card-title">Brand Name</h5>
-									<p>Product/Article Name</p>
-									<p>Price</p>
-								</div>
+								<a href="<?php echo BASEURL.'product/detail/'.$popular['url_product'] ?>">
+									<img src="<?php echo BASEBACK.$popular['product_image_front'] ?>" class="img-fluid"> 
+									<div class="card-body">
+										<h5 class="card-title"><?php echo $popular['nama'] ?></h5>
+										<p><?php echo $popular['nama_product'] ?></p>
+										<p><?php echo rupiah($popular['harga']) ?></p>
+									</div>
+								</a>
 							</div>
 
-							<a class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> VIEW MORE ITEM</a>
+							<a href="<?php echo BASEURL.'product/detail/'.$popular['url_product'] ?>" class="btn btn-warning" type="button"><i class="bi bi-arrow-right-circle-fill"></i> MORE FROM BRAND</a>
 						</div>
 					<?php } ?>
 				</div>
@@ -244,6 +246,50 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+	<section class="product-poin pt-5 pb-5" style="background:#0000008a;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="title-section d-flex gap-1 gap-lg-3 mb-4">
+						<h2 class="fw-bold text-uppercase" style="letter-spacing: 10px;">FOR OUR ROYAL CUSTOMER</h2>
+					</div>
+				</div>
+			</div>
+						<hr style="color:white;">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-12">
+					<div class="row">
+					<?php foreach ($productpoin as $key => $prodpoin): ?>
+						<?php if ($key <= 2): ?>
+						<div class="col-lg-4">
+							<div class="card card-product-poin">
+								<img src="<?php echo BASEBACK.$prodpoin['image'] ?>" class="card-img-top" alt="<?php echo $prodpoin['produk_poin_title'] ?>">
+								<span class="badge bg-warning text-dark">Points <?php echo $prodpoin['poin'] ?></span>
+								<div class="card-body">
+								    <h6 class="fw-bold text-uppercase"><?php echo $prodpoin['produk_poin_title'] ?></h6>
+								</div>
+								<a class="btn btn-warning border-radius-unset" href="<?php echo BASEURL.'product-points/'.$prodpoin['slug'] ?>"><i class="bi bi-arrow-right-circle-fill"></i> CLAIM NOW </a>
+							</div>
+						</div>
+						<?php endif ?>
+					<?php endforeach ?>
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-12" style="background-color: white;">
+					<div class="position-relative card-descprod-poin" style="height:100%;">
+						<h3 class="card-title fw-bold mt-3">Description</h3>
+						<hr>
+					    <p class="card-text">In the skatedeluxe Premium Club, you'll receive points through various activities, such as placing orders and product reviews. <br><br>There are two types of points: <br><br> Premium Club Points and Status Points. You can exchange your Premium Club Points for exclusive rewards. <br><br>Your Status Points will determine your Premium <strong>Club</strong> Status.</p>
+					    <a href="#" class="btn btn-warning"><i class="bi bi-arrow-right-circle-fill"></i> Go to Product Poin</a>
+					</div>
+				</div>
+			</div>
+						<hr style="color:white;">
+
 		</div>
 	</section>
 	<section class="email-subscribe bg-dark">

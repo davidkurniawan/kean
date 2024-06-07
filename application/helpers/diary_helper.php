@@ -467,4 +467,17 @@ function GetIp(){
     $AgentIp = $ipaddress;
     return $AgentIp;
 }
+
+function checkBrandAlphabet($alphabet){
+    $CI =& get_instance();
+    $brands = $CI->GlobalModel->queryManual("SELECT * FROM administrator WHERE brand_name LIKE '".$alphabet."%' AND flag_admin='2' ");
+    return $brands;
+}
+
+function checkProductBrand($idBrand){
+    $CI =& get_instance();
+    $brands = $CI->GlobalModel->getData("product",array('id_administrator'=>$idBrand));
+    $count = count($brands);
+    return $count;
+}
 ?>

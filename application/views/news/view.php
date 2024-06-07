@@ -1,4 +1,4 @@
-<main class="main" style="background:black;">
+<main class="main">
 
     <!-- ======= Hero Slider Section ======= -->
     <section id="hero-slider" class="hero-slider">

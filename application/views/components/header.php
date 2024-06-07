@@ -5,6 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="robots" content="index,follow"/>
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="language" content="en"/>
+    <meta name="publisher" content="-"/>
+    <meta name="country" content="id"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+    <base href="-"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <!-- Primary Meta Tags -->
     <meta name="title" content="-">
     <meta name="description" content="-">
@@ -30,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo ASSETS.'css/slick/slick-themes.css' ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link href="<?php echo ASSETS ?>plugins/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <title>KEAN</title>
+    <title>SHOP</title>
 
 </head>
 
@@ -134,7 +144,7 @@
                 </li>
                 <?php endforeach ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">BRANDS</a>
+                    <a class="nav-link" href="<?php echo BASEURL.'brands' ?>">BRANDS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo BASEURL.'news' ?>">NEWS</a>

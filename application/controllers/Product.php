@@ -135,4 +135,5 @@ class Product extends CI_Controller {
 		$result['html'] = $this->load->view('product/product-list',$viewData,TRUE);
 		echo json_encode($result);
 	}
+
 }
