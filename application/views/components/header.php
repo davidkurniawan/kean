@@ -154,7 +154,7 @@
                 <input type="text" class="form-control" name="keyword" id="searchYouWantText" placeholder="SEARCH KEY">
                 <div class="btn-group option-header" role="group" aria-label="Basic  example">
                     <button type="button" class="btn" id="btnsearchYouWant"><i class="bi bi-search"></i></button>
-                    <a href="<?php echo BASEURL.'profile' ?>" class="btn "><i class="bi bi-person"></i></a>
+                    <a href="<?php echo BASEURL.'profile' ?>" class="btn d-flex"><i class="bi bi-person pl-3" style="    padding-right: 6px;"></i>  <?php echo $this->session->userdata('sessNamaUser') ?></a>
                     <a href="<?php echo BASEURL.'cart' ?>" class="btn "><i class="bi bi-cart"></i></a>
                 </div>
             </form>

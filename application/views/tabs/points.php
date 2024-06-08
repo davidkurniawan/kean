@@ -52,7 +52,7 @@
         <?php if($prodPoin['status_poin'] == "discount"){ ?>
             <div class="col-6 col-lg-2 item d-flex align-content-strech flex-wrap justify-content-center mb-5">
                 <h6><?php echo $prodPoin['poin'] ?> Poin</h6>
-                <div class="circle-point d-flex justify-content-center align-items-center flex-wrap"><?php echo $prodPoin['value'] ?> %</div>
+                <div class="circle-point d-flex justify-content-center align-items-center flex-wrap"><?php echo $prodPoin['poin'] ?> %</div>
                 <h6><?php echo $prodPoin['produk_poin_title'] ?></h6>
                 <p><?php echo $prodPoin['description'] ?></p>
                 <a  class="btn btn-pilih open-DialogPoints px-4" data-bs-toggle="modal" data-bs-target="#redeemPointModal" data-id="<?php echo $prodPoin['id_produk_poin'] ?>">Tukar Poin</a>
@@ -60,7 +60,7 @@
         <?php } else { ?>
             <div class="col-6 col-lg-2 item d-flex align-content-strech flex-wrap justify-content-center mb-5">
                 <h6><?php echo $prodPoin['poin'] ?> Poin</h6>
-                <div class="circle-point" style="background-image: url('<?php echo BACKENDURL.$prodPoin['image'] ?>');"></div>
+                <div class="circle-point" style="background-image: url('<?php echo BASEBACK.$prodPoin['image'] ?>');"></div>
                 <h6><?php echo $prodPoin['produk_poin_title'] ?></h6>
                 <p><?php echo $prodPoin['description'] ?></p>
                 <a  class="btn btn-pilih open-DialogPoints px-4" data-bs-toggle="modal" data-bs-target="#redeemPointModal" data-id="<?php echo $prodPoin['id_produk_poin'] ?>">Tukar Poin</a>

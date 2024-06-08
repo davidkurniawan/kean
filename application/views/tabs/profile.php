@@ -40,7 +40,7 @@
                 </div>
             <?php endif ?>
                 <h2>Biodata</h2>
-                <h4 class="mt-4"><span>Nama</span><small><?php echo $profile['nama'] ?></small></h4>
+                <h4 class="mt-4"><span>Nama</span><small><?php echo $profile['nama_lengkap'] ?></small></h4>
                 <h4><span>Email</span><small><?php echo $profile['email'] ?></small></h4>
                 <h4><span>No Telepon</span><small><?php echo $profile['phone'] ?></small></h4>
                 <ul class="list-inline buttons mt-5">
@@ -55,7 +55,7 @@
                 
                 <div class="col-md mb-0 mt-0">
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="nama" value="<?php echo $profile['nama'] ?>" required>
+                        <input type="text" class="form-control" name="nama" value="<?php echo $profile['nama_lengkap'] ?>" required>
                         <label >Name</label>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
         </div>
         <div class="col-12 col-lg-4 ">
             <div class="h-100 mx-0 mx-lg-5 px-0 mt-5 reff-code">
-                <h5>Refferal Code Anda <?php echo $profile['ref_code'] ?></h5>
+                <h5>Refferal Code Anda <?php echo $profile['refferal_code'] ?></h5>
             </div>
         </div>
     </div>

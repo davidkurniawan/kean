@@ -1,4 +1,15 @@
 <section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <div style="width:26em;">
+      <?php if ($this->session->flashdata('msg')): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <?php echo $this->session->flashdata('msg') ?>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <?php endif ?>
+    </div>
+  </section>
+<section class="w-100 p-4 d-flex justify-content-center pb-4">
+    
     <div style="width: 26rem;">
         <!-- Pills navs -->
         
@@ -15,17 +26,17 @@
         <!-- Pills content -->
         <div class="tab-content" id="loginTabContent">
           <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form>
+            <form action="<?php echo BASEURL.'user/login' ?>" method="POST">
               <!-- Email input -->
               <div data-mdb-input-init="" class="form-outline mb-4 mt-4" data-mdb-input-initialized="true">
                 <label class="form-label" for="loginName" style="margin-left: 0px;">Email or username</label>
-                <input type="email" id="loginName" class="form-control">
+                <input type="email" id="loginName" name="email" class="form-control">
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 114.4px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Password input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
                 <label class="form-label" for="loginPassword" style="margin-left: 0px;">Password</label>
-                <input type="password" id="loginPassword" class="form-control">
+                <input type="password" name="password" id="loginPassword" class="form-control">
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- 2 column grid layout -->
@@ -66,7 +77,7 @@
               <!-- PhoneNumber input -->
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
                 <label class="form-label" for="registerEmail" style="margin-left: 0px;">* Phone Number</label>
-                <input type="tel" id="PhoneNumber" name="telepon" class="form-control" pattern="[+]{1}[0-9]{11,14}" required>
+                <input type="tel" id="PhoneNumber" name="telepon" class="form-control" required>
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Email input -->
@@ -85,6 +96,12 @@
               <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
                 <label class="form-label" for="registerRepeatPassword" style="margin-left: 0px;">* Repeat password</label>
                 <input type="password" id="registerRepeatPassword" name="repeatPassword" class="form-control" required>
+              <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+              <!-- Repeat Password input -->
+              <div data-mdb-input-init="" class="form-outline mb-4" data-mdb-input-initialized="true">
+                <label class="form-label" for="registerreferalCode" style="margin-left: 0px;">Referal Code</label>
+                <input type="text" id="registerreferalCode" name="referalCode" class="form-control" >
               <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 8px;"></div><div class="form-notch-trailing"></div></div></div>
 
               <!-- Checkbox -->

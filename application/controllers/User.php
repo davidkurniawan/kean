@@ -7,6 +7,26 @@ class User extends CI_Controller {
 		parent::__construct();
 	}
 
+	public function login($value='')
+	{
+		$post = $this->input->post();
+		$dataAdmin = $this->GlobalModel->getDataRow('user_customer',array('email'=>$post['email']));
+		if (password_verify($post['password'], $dataAdmin['password']) == TRUE) {
+			$dataSess = array(
+				'sessUser' 			=> 	TRUE,
+				'sessNamaUser'		=>	$dataAdmin['username'],
+				'idAdmin'			=>	$dataAdmin['id_user_customer'],
+				'ippublic'			=>	$_SERVER['REMOTE_ADDR'],
+			);
+			$this->session->set_userdata($dataSess);
+		    redirect(BASEURL);
+		} else {
+			$this->session->set_flashdata('msg','Mohon maaf email dan password anda salah');
+		    redirect(BASEURL.'login');
+		}
+		
+	}
+
 	public function daftar()
 	{
 		$post = $this->input->post();
@@ -21,7 +41,17 @@ class User extends CI_Controller {
 						'password'		=>	password_hash($post['password'], PASSWORD_DEFAULT),
 						'created_date'	=>	date('Y-m-d H:i:s'),
 						'ip_public'		=>	$_SERVER['REMOTE_ADDR'],
+						'refferal_code'	=>	generateReferenceNumber()
 					);
+
+					if (!empty($post['referalCode'])) {
+						$insertData['refrensi_code']	=	$post['referalCode'];
+
+						$searchUser = $this->GlobalModel->getDataRow('user_customer',array('refferal_code'=>$post['referalCode']));
+						$searchRulesPoin = $this->GlobalModel->getDataRow('rules_poin',array('id_rules_poin'=>1));
+						$insertPoint = $this->GlobalModel->updateData('user_customer',array('id_user_customer'=>$searchUser['id_user_customer']),array('poin'=>$searchUser['poin'] + $searchRulesPoin['points_value']));
+
+					}
 					$this->GlobalModel->insertData('user_customer',$insertData);
 		        	$this->session->set_flashdata('msg',"Selamat!, Register akun Anda berhasil, silakan login.");
 					redirect(BASEURL.'login');
