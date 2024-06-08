@@ -9,10 +9,13 @@
 				    <div class="container-fluid">
 				            <ul class="navbar-nav">
 				                <li class="nav-item">
-				                    <a class="nav-link fw-bold active" aria-current="page" href="#">HOW TO GET</a>
+				                    <a class="nav-link fw-bold " aria-current="page" href="#how-it-works">HOW IT WORKS</a>
 				                </li>
 				                <li class="nav-item">
-				                    <a class="nav-link fw-bold" href="#">RULES</a>
+				                    <a class="nav-link fw-bold" href="#rules">RULES</a>
+				                </li>
+				                <li class="nav-item">
+				                    <a class="nav-link fw-bold" href="#product-points">PRODUCT POINTS</a>
 				                </li>
 				            </ul>
 				    </div>
@@ -33,13 +36,13 @@
 			</div>
 		</div>
 	</section>
-	<section class="how-get-points mt-5 mb-5">
+	<section class="how-get-points mt-5 mb-5" id="how-it-works">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h2 class="fw-bold">THIS IS HOW IT WORKS!</h2>
 				</div>
-				<hr>
+				<hr class="hr-intcode">
 				<div class="col-lg-4 col-md-12">
 					<div class="card-rules-points p-4">
 						<h5><i class="bi bi-record-circle-fill"></i> REGISTER YOUR ACCOUNT</h5>
@@ -68,9 +71,37 @@
 			</div>
 		</div>
 	</section>
-	<section class="product-item">
+	<section class="rules" id="rules">
 		<div class="container">
 			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<div class="title-section">
+						<h2 class="fw-bold">RULES</h2>
+					</div>
+				</div>
+					<hr class="hr-intcode">
+				<div class="col-lg-12 col-md-12 mb-5">
+					<div class="table-of-rules">
+						<table width="100%">
+							<tr>
+								<td width="50%">RULES</td>
+								<td width="50%">10 Points</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="product-item" id="product-points">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12">
+					<div class="title-section">
+						<h2 class="fw-bold">PRODUCT POINTS</h2>
+					</div>
+				</div>
+					<hr class="hr-intcode">
 				<?php foreach ($product as $key => $prod): ?>
 					<div class="col-lg-3">
 						<div class="points-item">

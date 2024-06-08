@@ -284,7 +284,7 @@
 						<h3 class="card-title fw-bold mt-3">Description</h3>
 						<hr>
 					    <p class="card-text">In the skatedeluxe Premium Club, you'll receive points through various activities, such as placing orders and product reviews. <br><br>There are two types of points: <br><br> Premium Club Points and Status Points. You can exchange your Premium Club Points for exclusive rewards. <br><br>Your Status Points will determine your Premium <strong>Club</strong> Status.</p>
-					    <a href="#" class="btn btn-warning"><i class="bi bi-arrow-right-circle-fill"></i> Go to Product Poin</a>
+					    <a href="<?php echo BASEURL.'product-points' ?>" class="btn btn-warning"><i class="bi bi-arrow-right-circle-fill"></i> Go to Product Poin</a>
 					</div>
 				</div>
 			</div>

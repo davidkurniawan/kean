@@ -8,22 +8,22 @@
     <meta name="robots" content="index,follow"/>
     <meta name="robots" content="max-image-preview:large">
     <meta name="language" content="en"/>
-    <meta name="publisher" content="-"/>
+    <meta name="publisher" content=""/>
     <meta name="country" content="id"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
-    <base href="-"/>
+    <base href=""/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="-">
-    <meta name="description" content="-">
+    <meta name="title" content="">
+    <meta name="description" content="">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="-">
-    <meta property="og:title" content="-">
-    <meta property="og:description" content="-">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
     <meta property="og:image" content="<?php echo ASSETS ?>img/metashare.png">
     
     <link rel="shortcut icon" href="" type="image/x-icon">
