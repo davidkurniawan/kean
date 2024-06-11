@@ -94,6 +94,18 @@ function loadview($value='')
     $CI =& get_instance();
 	return $CI->load->view($value);
 }
+
+function customID($value='')
+{
+    $CI =& get_instance();
+
+    $cc = $CI->db->count_all('address_user');
+    $coun = str_pad($cc, 4, 0, STR_PAD_LEFT); // Updated line to include '0'
+    $id = "AU"."-";
+    $d = date('y') ;
+    $mnth = date("m");
+    return $customid = $id.$d.$mnth.$coun;
+}
 function convertDigit($digit)
 {
     switch ($digit)
@@ -391,13 +403,13 @@ function cekAddressUser($value='')
 function showChildTransUser($value='')
 {
     $CI =& get_instance();
-    return $CI->GlobalModel->queryManual('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product JOIN transaction_order_child toc ON pi.product_item_id=toc.product_item_id WHERE pi.kategori_item_product ="2" AND toc.transaction_id="'.$value.'" ');
+    
     
 }
 function showChildTransUserRow($value='')
 {
     $CI =& get_instance();
-    return $CI->GlobalModel->queryManualRow('SELECT * FROM product_item pi JOIN product p ON pi.id_product=p.id_product JOIN jenis_product jp ON pi.nama_item_product=jp.id_jenis_product JOIN transaction_order_child toc ON pi.product_item_id=toc.product_item_id WHERE pi.kategori_item_product ="2" AND toc.transaction_id="'.$value.'" ');
+
     
 }
 

@@ -13,5 +13,5 @@
         </div>
     <?php } ?>
 
-    <a href="#" class="btn btn-white-bordered d-inline my-2 px-3 mt-2" data-bs-toggle="modal" data-bs-target="#addressesDialog">Pilih Alamat Lain</a>
+    <a href="<?php echo BASEURL.'address/list' ?>" class="btn btn-white-bordered d-inline my-2 px-3 mt-2" >Pilih Alamat Lain</a>
 </div>

@@ -20,6 +20,7 @@ class Cart extends CI_Controller {
 			"navbar" => "white"
 
 		];
+
 		$this->load->view('components/header',$data);
 		$this->load->view('cart');
 		$this->load->view('components/footer');
@@ -93,6 +94,17 @@ class Cart extends CI_Controller {
 			'diskon'	=> $product['diskon']
         );
 
+        $insertCart = array(
+        	'id_customer'	=>	$this->session->userdata('idAdmin'),
+        	'id_product_item'	=>	$item['product_item_id'],
+        	'qty'	=>	$post['qty'],
+        	'harga'	=>	$item['harga'],
+        	'status'	=>	1,
+        	'created_date'	=>	date('Y-m-d H:i:s'),
+        );
+
+        $this->GlobalModel->insertData('cart_product',$insertCart);
+
     	$this->cart->insert($insertData);
 
     	$reponse = array(
@@ -120,6 +132,7 @@ class Cart extends CI_Controller {
 	            'qty' => $post['qty'] - 1, 
 	        );
 		}
+		$this->GlobalModel->updateData('cart_product',array('id_product_item'=>$post['id'],'id_customer'=>$this->session->userdata('idAdmin')),array('qty'=>$data['qty'],'update_date'=>date('Y-m-d H:i:s'),'status'=>1));
 	    $this->cart->update($data);
 	    $response = array(
 	    	"totalharga"	=>	"IDR ".number_format(round($this->cart->total())),
@@ -142,6 +155,7 @@ class Cart extends CI_Controller {
 
 	public function shoopingcart($value='')
 	{
+		$viewData['cartDb'] = $this->GlobalModel->getData('cart_product',array('id_customer'=>$this->session->userdata('idAdmin')));
 		$viewData['cart'] = $this->cart->contents();
 		$this->load->view('components/header');
 		$this->load->view('cart',$viewData);

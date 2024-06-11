@@ -14,13 +14,14 @@ class Address extends CI_Controller {
 
 		$data = [
 
-			"title" => "Reseller",
+			"title" => "Address",
 
-			"metaDescription" => "Reseller",
+			"metaDescription" => "Address",
 
 			"navbar" => "blue"
 
 		];
+		
 		$viewData['addressAdmin'] = $this->GlobalModel->getData('administrator',null);
 		$viewData['user'] = $this->GlobalModel->getDataRow('user_customer',array('id_user_customer'=>$this->session->userdata('idAdmin')));
 		$viewData['event']	=	$this->GlobalModel->getDataRow('event_diary',array('id_event_diary'=>1));
@@ -29,20 +30,75 @@ class Address extends CI_Controller {
 		$this->load->view('components/footer');
 	}
 
+	public function list($value='')
+	{
+		$data = [
+
+			"title" => "Address",
+
+			"metaDescription" => "Address",
+
+			"navbar" => "blue"
+
+		];
+
+		$this->load->view('components/header',$data);
+		$this->load->view('components/address-list');
+		$this->load->view('components/footer');
+	}
+
+	public function update($value='')
+	{
+		$data = [
+
+			"title" => "Address",
+
+			"metaDescription" => "Address",
+
+			"navbar" => "blue"
+
+		];
+
+		pre(customID());
+		$this->load->view('components/header',$data);
+		$this->load->view('components/address-update');
+		$this->load->view('components/footer');
+	}
+
+	public function addressUpdate($value='')
+	{
+		$post = $this->input->post();
+
+		$updateData = array(
+			'id_user_customer'	=>	$this->session->userdata('idAdmin'),
+			'nama'	=>	$post['nama'],
+			'telepon'	=>	$post['telepon'],
+			'simpan_alamat'	=>	$post['simpanAlamat'],
+			'alamat_lengkap'	=>	$post['alamatLengkap'],
+			'provinsi'	=>	$post['provinsi'],
+			'kota'	=>	$post['kota'],
+			'kecamatan'	=>	$post['kecamatan'],
+			'kodepos'	=>	$post['kodePos'],
+			'created_date'	=>	date('Y-m-d H:i:s'),
+			'status_address'	=>	1,
+		);
+
+		$this->GlobalModel->updateData('address_user',array('id_address_user'=>$post['uniqueCode']),$updateData);
+		redirect(BASEURL.'address/list');
+	}
+
 	public function addressSubmit($value='')
 	{
 		$post = $this->input->post();
 		$dataAlamat = $this->GlobalModel->getDataRow('address_user',array('id_user_customer'=>$this->session->userdata('idAdmin')));
 		if (empty($dataAlamat)) {
 			$insertData = array(
+				'id_address_user'	=>	customID(),
 				'id_user_customer'	=>	$this->session->userdata("idAdmin"),
-				'email'	=>	$post['email'],
 				'nama'	=>	$post['nama'],
 				'telepon'	=>	$post['telepon'],
 				'simpan_alamat'	=>	$post['simpanAlamat'],
 				'alamat_lengkap'	=>	$post['alamatLengkap'],
-				'id_destination'	=>	$post['idDestination'],
-				'destination_name'	=>	$post['selectAlamat'],
 				'provinsi'	=>	$post['provinsi'],
 				'kota'	=>	$post['kota'],
 				'kecamatan'	=>	$post['kecamatan'],
@@ -53,14 +109,12 @@ class Address extends CI_Controller {
 			$this->GlobalModel->insertData("address_user",$insertData);
 		} else {
 			$insertData = array(
+				'id_address_user'	=>	customID(),
 				'id_user_customer'	=>	$this->session->userdata("idAdmin"),
-				'email'	=>	$post['email'],
 				'nama'	=>	$post['nama'],
 				'telepon'	=>	$post['telepon'],
 				'simpan_alamat'	=>	$post['simpanAlamat'],
 				'alamat_lengkap'	=>	$post['alamatLengkap'],
-				'id_destination'	=>	$post['idDestination'],
-				'destination_name'	=>	$post['selectAlamat'],
 				'provinsi'	=>	$post['provinsi'],
 				'kota'	=>	$post['kota'],
 				'kecamatan'	=>	$post['kecamatan'],

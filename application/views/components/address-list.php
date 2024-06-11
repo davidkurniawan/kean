@@ -1,4 +1,4 @@
-<div class="container-fluid dialog py-0">
+<div class="container-fluid dialog py-0 mt-5">
     <div class="container content py-0 px-0 px-lg-0">
         <div class="d-flex justify-content-center align-content-between flex-wrap text-center px-1 px-md-4">
             <div class="col-12 mt-0 text-start content">
@@ -21,7 +21,7 @@
                             <h2>Alamat Rumah <small class="badge"><?php echo $value['simpan_alamat'] ?></small></h2>
                             <p><?php echo $value['telepon'] ?></p><p><?php echo $value['alamat_lengkap'] ?></p> 
                             <ul class="list-inline buttons">
-                                <li class="list-inline-item"><a href="">Ubah Alamat</a></li>
+                                <li class="list-inline-item mt-3"><a href="<?php echo BASEURL.'address/update/'.$value['id_address_user'] ?>" >Ubah Alamat</a></li>
                             </ul>      
                         </div>
                         <?php endforeach ?>
@@ -32,18 +32,3 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#ubahStatusAlamat").on('click','.btn-pilih',function () {
-            var addressID = $(this).parents(".pilih-address").data("idaddress");
-            $(".pilih-address.checked").html( '<button type="button" class="btn btn-pilih px-5">Pilih</button>');
-            $(".pilih-address").removeClass("checked");
-            $(this).parents(".pilih-address").addClass("checked");
-            $(this).parents(".pilih-address").html( '<i class="bi bi-check"></i>');
-            $.post( "<?php echo BASEURL."address/pilihalamat" ?>", { addressID: addressID })
-              .done(function( data ) {
-                    window.location.reload();
-            });
-        });
-    });
-</script>

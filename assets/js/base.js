@@ -281,10 +281,11 @@ $(document).ready(function() {
     
         $('.items-cart').on('click','.minus-cart',function() {
             var rowid = $(this).data('rowid');
+            var id = $(this).data('proditem');
             var input = $(this).siblings(".qty-cart");
             var inputVal = $(this).siblings(".qty-cart").val();
             var count = parseInt(input.val()) - 1;
-            $.post( BASEURL+"cart/updateshopingcart", { action: "minus", rowid: rowid, qty:inputVal}).done(function( data ) {
+            $.post( BASEURL+"cart/updateshopingcart", { action: "minus",id:id , rowid: rowid, qty:inputVal}).done(function( data ) {
                 var myObj = JSON.parse(data);
                 $('.totalHarga').text(myObj.totalharga);
             });
@@ -295,13 +296,14 @@ $(document).ready(function() {
         });
     
         $('.items-cart').on('click','.plus-cart',function() {
+            var id = $(this).data('proditem');
             var rowid = $(this).data('rowid');
             var input = $(this).siblings(".qty-cart");
             var inputVal = $(this).siblings(".qty-cart").val();
             var countQty = parseInt(input.val()) + 1;
             var getMaxQty = $(this).data('max');
             if(countQty <= getMaxQty){
-                $.post( BASEURL+"cart/updateshopingcart", { action: "plus", rowid: rowid, qty:inputVal }).done(function( data ) {
+                $.post( BASEURL+"cart/updateshopingcart", { action: "plus",id:id ,rowid: rowid, qty:inputVal }).done(function( data ) {
                     var myObj = JSON.parse(data);
                     $('.totalHarga').text(myObj.totalharga);
                 });
@@ -312,6 +314,18 @@ $(document).ready(function() {
             }
 
             return false;
+        });
+
+        $("#ubahStatusAlamat").on('click','.btn-pilih',function () {
+            var addressID = $(this).parents(".pilih-address").data("idaddress");
+            $(".pilih-address.checked").html( '<button type="button" class="btn btn-pilih px-5">Pilih</button>');
+            $(".pilih-address").removeClass("checked");
+            $(this).parents(".pilih-address").addClass("checked");
+            $(this).parents(".pilih-address").html( '<i class="bi bi-check"></i>');
+            $.post( BASEURL+"address/pilihalamat", { addressID: addressID })
+              .done(function( data ) {
+                    window.location.reload();
+            });
         });
     
     }

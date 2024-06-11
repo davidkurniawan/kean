@@ -61,20 +61,6 @@
   </div>
 </div>
 
-<!-- MODAL SELECT ADDRESS -->
-<div class="modal fade" id="addressesDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addressesDialogLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-join">
-    <div class="modal-content">   
-        <div class="modal-header">
-            <button type="button" class="btn-close pull-right me-" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        
-        <div class="modal-body pb-5">
-            <?php loadview("components/address-list"); ?>
-        </div>
-    </div>
-  </div>
-</div>
 
 <!-- MODAL SELECT BRANCH -->
 <div class="modal fade" id="branchDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="branchDialogLabel" aria-hidden="true">
@@ -105,6 +91,7 @@
     </div>
   </div>
 </div>
+
 
 <?php 
 /*

@@ -35,7 +35,11 @@
     </div>
     <div class="col-md mb-0">
         <div class="form-floating">
-            <input type="name" class="form-control" id="floatingName" name="simpanAlamat" placeholder="Name" required>
+            <select class="form-control" name="simpanAlamat" required>
+                <option value="Utama">Utama</option>
+                <option value="Rumah">Rumah</option>
+                <option value="Kantor">Kantor</option>
+            </select>
             <label for="floatingName">Simpan alamat sebagai</label>
         </div>
     </div>

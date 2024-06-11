@@ -2523,6 +2523,21 @@ hr {
     .profile.content {
         margin-top: 2vh;
     }
+    .dialog .content h5 {
+        font-size: 18px;
+        color: #404040;
+    }
+    .address .item h1 {
+        font-size: 16px;
+    }
+    .address .item h2 {
+        font-size: 12px;
+    }
+    
+    .address .item p {
+        font-size: 14px;
+        margin-bottom: unset;
+    }
 
     .profile-tab .nav-item a {
         padding: 0.8rem 1rem;
