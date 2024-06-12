@@ -4,11 +4,12 @@
             <div class="col-12 px-0 mt-5 mt-lg-0 text-start content">
                 <h5 class="w-100">Alamat Baru</h5>                
 
-                <form class="form-floating mb-0 mt-4 cart" action="<?php echo BASEURL.'address/addressUpdate' ?>" method="POST">
+                <form class="form-floating mb-0 mt-4 cart" action="<?php echo BASEURL.'address/addressUpdate/'.$address['id_address_user'] ?>" method="POST">
                     <input type="hidden" name="uniqueCode" >
                     <?php loadview("components/cart/address/update-address"); ?>
 
-                    <button type="submit" class="btn btn-pilih px-5 mt-4 float-end">Simpan Alamat</button>
+                    <button type="submit" class="btn btn-pilih simpan-alamat px-5 mt-4 float-end">Simpan Alamat</button>
+                    <a href="<?php echo BASEURL.'address/delete/'.$address['id_address_user'] ?>" class="btn btn-danger hapus-alamat px-5 mt-4 float-end">Hapus Alamat</a>
                 </form>
             </div>
         </div>

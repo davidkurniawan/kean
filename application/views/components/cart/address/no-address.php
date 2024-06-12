@@ -53,30 +53,19 @@
     </div>
     <div class="col-md">
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingAlamat" name="selectAlamat" placeholder="Kecamatan/Kota/Provinsi/Kode Pos" required>
-            <label>Kecamatan/Kota/Provinsi/Kode Pos</label>
-        </div>
-        <div class="absolute-select">
-            <div class="data-response-select">
-                
-            </div>
-        </div>
-    </div>
-    <div class="col-md">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingProvinsi" name="provinsi" placeholder="Provinsi" readonly required>
+            <input type="text" class="form-control" id="floatingProvinsi" name="provinsi" placeholder="Provinsi" required>
             <label>Provinsi</label>
         </div>
     </div>
     <div class="col-md">
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatKota" name="kota" placeholder="Kota/Kabupaten" readonly required>
+            <input type="text" class="form-control" id="floatKota" name="kota" placeholder="Kota/Kabupaten" required>
             <label>Kota/Kabupaten</label>
         </div>
     </div>
     <div class="col-md">
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatKecamatan" name="kecamatan" placeholder="Kecamatan" readonly required>
+            <input type="text" class="form-control" id="floatKecamatan" name="kecamatan" placeholder="Kecamatan" required>
             <label>Kecamatan</label>
         </div>
     </div>

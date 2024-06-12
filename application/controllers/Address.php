@@ -58,10 +58,9 @@ class Address extends CI_Controller {
 			"navbar" => "blue"
 
 		];
-
-		pre(customID());
+		$viewData['address'] = $this->GlobalModel->getDataRow('address_user',array('id_address_user'=>$value));
 		$this->load->view('components/header',$data);
-		$this->load->view('components/address-update');
+		$this->load->view('components/address-update',$viewData);
 		$this->load->view('components/footer');
 	}
 
@@ -83,33 +82,21 @@ class Address extends CI_Controller {
 			'status_address'	=>	1,
 		);
 
-		$this->GlobalModel->updateData('address_user',array('id_address_user'=>$post['uniqueCode']),$updateData);
+		$this->GlobalModel->updateData('address_user',array('id_address_user'=>$value),$updateData);
 		redirect(BASEURL.'address/list');
 	}
 
 	public function addressSubmit($value='')
 	{
 		$post = $this->input->post();
-		$dataAlamat = $this->GlobalModel->getDataRow('address_user',array('id_user_customer'=>$this->session->userdata('idAdmin')));
-		if (empty($dataAlamat)) {
-			$insertData = array(
-				'id_address_user'	=>	customID(),
-				'id_user_customer'	=>	$this->session->userdata("idAdmin"),
-				'nama'	=>	$post['nama'],
-				'telepon'	=>	$post['telepon'],
-				'simpan_alamat'	=>	$post['simpanAlamat'],
-				'alamat_lengkap'	=>	$post['alamatLengkap'],
-				'provinsi'	=>	$post['provinsi'],
-				'kota'	=>	$post['kota'],
-				'kecamatan'	=>	$post['kecamatan'],
-				'kodepos'	=>	$post['kodePos'],
-				'created_date'	=>	date("Y-m-d H:i:s"),
-				'status_address'	=>	1,
-			);
-			$this->GlobalModel->insertData("address_user",$insertData);
+
+		$dataAlamat = $this->GlobalModel->getData('address_user',array('id_user_customer'=>$this->session->userdata('idAdmin')));
+		if (count($dataAlamat) >= 9) {
+			$this->session->userdata('msg','List alamat Anda sudah maksimal');
+			redirect(BASEURL."address/list");
 		} else {
 			$insertData = array(
-				'id_address_user'	=>	customID(),
+				'id_address_user'	=>	uniqid(),
 				'id_user_customer'	=>	$this->session->userdata("idAdmin"),
 				'nama'	=>	$post['nama'],
 				'telepon'	=>	$post['telepon'],
@@ -120,11 +107,28 @@ class Address extends CI_Controller {
 				'kecamatan'	=>	$post['kecamatan'],
 				'kodepos'	=>	$post['kodePos'],
 				'created_date'	=>	date("Y-m-d H:i:s"),
-				'status_address'	=>	0,
 			);
+
+			if (count($dataAlamat) <= 0) {
+				$insertData['status_address'] = 1;
+			} else {
+				$insertData['status_address'] = 0;
+			}
+
 			$this->GlobalModel->insertData("address_user",$insertData);
+
+			redirect(BASEURL."address/list");
 		}
-		redirect(BASEURL."address");
+		
+	}
+
+	public function delete($value='')
+	{
+		$updateData = array(
+			'status_address'	=> -1,
+		);
+		$this->GlobalModel->updateData('address_user',array('id_address_user'=>$value),$updateData);
+		redirect(BASEURL.'address/list');
 	}
 
 	public function pilihalamat($value='')

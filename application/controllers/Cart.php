@@ -248,7 +248,7 @@ class Cart extends CI_Controller {
 					if ($dataUser['status_user_karyawan'] != 1) {
 						if ($eventDiary['status_event_diary'] == 1 && $dataUser['status_event'] == 0) {
 							$this->session->set_flashdata('msg','Opsi Pengiriman Khusus Event Tertentu');
-							redirect(BASEURL.'address');
+							redirect(BASEURL.'billing');
 						}
 					} 
 					// pre($eventDiary);
@@ -263,7 +263,7 @@ class Cart extends CI_Controller {
 				redirect(BASEURL.'address');
 			} else if($post['opsiPengiriman'] == 'sicepat') {
 				$this->session->set_flashdata('msg','Opsi Service Pengiriman kosong');
-				redirect(BASEURL.'address');
+				redirect(BASEURL.'billing');
 			} else {
 				$serviceName = null;
 				$servicePrice = 0;
@@ -276,7 +276,7 @@ class Cart extends CI_Controller {
 			if ($getDataAdmin['kode_post'] == $post['kodePos']) {
 			} else {
 				$this->session->set_flashdata('msg','Mohon maaf Kode Pos Anda tidak sama dengan Tim Diary');
-				redirect(BASEURL.'address');
+				redirect(BASEURL.'billing');
 			}
 		}
 

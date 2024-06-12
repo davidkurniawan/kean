@@ -89,10 +89,10 @@ function urisegment($value='')
 	return $CI->uri->segment($value);
 }
 
-function loadview($value='')
+function loadview($value='',$data='')
 {
     $CI =& get_instance();
-	return $CI->load->view($value);
+	return $CI->load->view($value,$data);
 }
 
 function customID($value='')

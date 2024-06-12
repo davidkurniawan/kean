@@ -18,54 +18,54 @@
     <div class="col-md mb-0">
         <div class="form-update">
             <label for="addressupdateName">Nama</label>
-            <input type="name" class="form-control" id="addressupdateName" name="nama" placeholder="Name" required>
+            <input type="name" class="form-control" id="addressupdateName" name="nama" value="<?php echo $address['nama'] ?>" placeholder="Name" required>
         </div>
     </div>
     <div class="col-md mb-2">
         <div class="form-update">
             <label for="updateTelepon">Telepon</label>
-            <input type="phone" class="form-control" id="updateTelepon" name="telepon" placeholder="Telepon" required>
+            <input type="phone" class="form-control" id="updateTelepon" name="telepon" value="<?php echo $address['telepon'] ?>" placeholder="Telepon" required>
         </div>
     </div>
     <div class="col-md mb-2">
         <div class="form-update">
             <label for="simpanAlamat">Simpan alamat sebagai</label>
             <select class="form-control" name="simpanAlamat" id="simpanAlamat" required>
-                <option value="Utama">Utama</option>
-                <option value="Rumah">Rumah</option>
-                <option value="Kantor">Kantor</option>
+                <option <?php if($address['simpan_alamat'] == 'Utama'){ echo 'selected="selected"';} ?> value="Utama">Utama</option>
+                <option <?php if($address['simpan_alamat'] == 'Rumah'){ echo 'selected="selected"';} ?> value="Rumah">Rumah</option>
+                <option <?php if($address['simpan_alamat'] == 'Kantor'){ echo 'selected="selected"';} ?> value="Kantor">Kantor</option>
             </select>
         </div>
     </div>
     <div class="col-md mb-2">
         <div class="form-update">
             <label for="updateAlamat">Alamat Lengkap</label>
-            <textarea class="form-control" name="alamatLengkap" id="updateAlamatLengkap" required></textarea>
+            <textarea class="form-control" name="alamatLengkap" id="updateAlamatLengkap" required><?php echo $address['alamat_lengkap'] ?></textarea>
         </div>
         
     </div>
     <div class="col-md">
         <div class="form-update">
             <label>Provinsi</label>
-            <input type="text" class="form-control" id="updateProvinsi" name="provinsi" placeholder="Provinsi" required>
+            <input type="text" class="form-control" id="updateProvinsi" name="provinsi" placeholder="Provinsi" value="<?php echo $address['provinsi'] ?>" required>
         </div>
     </div>
     <div class="col-md">
         <div class="form-update">
             <label>Kota/Kabupaten</label>
-            <input type="text" class="form-control" id="updateKota" name="kota" placeholder="Kota/Kabupaten" required>
+            <input type="text" class="form-control" id="updateKota" name="kota" placeholder="Kota/Kabupaten" value="<?php echo $address['kota'] ?>" required>
         </div>
     </div>
     <div class="col-md">
         <div class="form-update">
             <label>Kecamatan</label>
-            <input type="text" class="form-control" id="updateKecamatan" name="kecamatan" placeholder="Kecamatan" required>
+            <input type="text" class="form-control" id="updateKecamatan" name="kecamatan" placeholder="Kecamatan" value="<?php echo $address['kecamatan'] ?>" required>
         </div>
     </div>
     <div class="col-md mb-2">
         <div class="form-update">
             <label for="updateKodepos">Kode Pos</label>
-            <input type="text" class="form-control" id="updateKodepos" name="kodePos" placeholder="Kode Pos" required>
+            <input type="text" class="form-control" id="updateKodepos" name="kodePos" placeholder="Kode Pos" value="<?php echo $address['kodepos'] ?>" required>
         </div>
     </div>
 

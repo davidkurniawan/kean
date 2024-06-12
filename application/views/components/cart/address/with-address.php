@@ -4,7 +4,7 @@
             <?php $alamatAktif = activeAddressUser(); ?>
             <h1><?php echo $alamatAktif['nama'] ?></h1>
             <h2>Alamat Rumah <small class="badge"><?php echo $alamatAktif['simpan_alamat'] ?></small></h2>
-            <p><?php echo $alamatAktif['telepon'] ?></p><p><?php echo $alamatAktif['destination_name'] ?></p><p><?php echo $alamatAktif['alamat_lengkap'] ?></p>     
+            <p><?php echo $alamatAktif['telepon'] ?></p><p><?php echo $alamatAktif['alamat_lengkap'] ?></p>     
             <input type="hidden" name="kodePos" value="<?php echo $alamatAktif['kodepos'] ?>">
         </div>
     <?php } else { ?>

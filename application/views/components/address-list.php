@@ -2,6 +2,7 @@
     <div class="container content py-0 px-0 px-lg-0">
         <div class="d-flex justify-content-center align-content-between flex-wrap text-center px-1 px-md-4">
             <div class="col-12 mt-0 text-start content">
+                <a href="<?php echo BASEURL.'billing' ?>"><i class="bi bi-arrow-left"></i> Back To Billing</a>
                 <h5 class="w-100">Daftar Alamat <button type="button" class="text-orange float-right d-lg-inline btn btn-warning" data-bs-toggle="modal" data-bs-target="#addAddressesDialog">Tambah Alamat Baru</button></h5>                
 
                 <form class="form-floating mb-0" id="ubahStatusAlamat">

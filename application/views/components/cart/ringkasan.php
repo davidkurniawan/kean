@@ -48,7 +48,7 @@
 
             <h2>Total <small class="totalHarga">IDR <?php echo number_format(round($this->cart->total())); ?></small></h4>
 
-            <a href="<?php echo BASEURL."address" ?>" type="submit" class="btn btn-purple d-inline my-2 px-5 mt-4">Buat Pesanan</a>
+            <a href="<?php echo BASEURL."billing" ?>" type="submit" class="btn btn-purple d-inline my-2 px-5 mt-4">Buat Pesanan</a>
         </div>
     </div>
 </div>
