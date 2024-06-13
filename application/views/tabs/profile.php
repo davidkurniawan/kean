@@ -1,21 +1,6 @@
 <?php $biodata = biodataUser(); ?>
 
-<div class="toast-container bg-orange position-fixed top-0 start-50 translate-middle-x p-3">
-  <div id="changeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <div class="rounded me-2" alt="..."><i class="bi bi-info-circle-fill"></i></div>
-      <strong class="me-auto">Perubahan berhasil disimpan</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-  </div>
-</div>
-
-
 <div class="container d-flex p-4 flex-wrap">
-    <div class="title-profile mt-4 col-12">
-        <h1 class="hi">Hi,</h1>
-        <h2 class="name satisfy"><?php echo $this->session->userdata("sessNamaUser"); ?></h2>
-    </div>
     <div class="info-profile col-12 d-flex flex-wrap mt-5 g-5">
         <div class="col-12 col-lg-3">
             <div class="photo-upload p-4 text-center">
@@ -112,15 +97,41 @@
                 <button class="btn btn-pilih px-4 mt-5" type="submit">Save Changes</button>
             </form>
         </div>
-        <div class="col-12 col-lg-4 ">
-            <div class="h-100 mx-0 mx-lg-5 px-0 mt-5 reff-code">
-                <h5>Refferal Code Anda <?php echo $profile['refferal_code'] ?></h5>
+        
+    </div>
+</div>
+<hr />
+<div class="container-fluid dialog py-0 mt-5">
+    <div class="container content py-0 px-0 px-lg-0">
+        <div class="d-flex justify-content-center align-content-between flex-wrap text-center px-1 px-md-4">
+            <div class="col-12 mt-0 text-start ">
+                <h5 class="w-100">Pesanan Anda </h5> 
+            </div>
+            <div class="tab-pane parent w-100" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab" tabindex="0">
+                <?php loadview("tabs/orders"); ?>        
             </div>
         </div>
     </div>
 </div>
-<hr class="mx-5"/>
+<hr>
 <?php loadview("components/address-list"); ?>
+
+<div class="container-fluid dialog py-0 mt-5">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-section d-flex gap-1 gap-lg-3">
+                    <h3>Voucher</h3>
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                    <div><a href="<?php echo BASEURL.'address/list' ?>">View All</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane parent w-100" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab" tabindex="0">
+        <?php loadview("tabs/orders"); ?>        
+    </div>
+</div>
 
 <script type="text/javascript">
 $(document).ready(function () {

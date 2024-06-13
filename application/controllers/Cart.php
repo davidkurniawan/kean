@@ -95,13 +95,17 @@ class Cart extends CI_Controller {
         );
 
         $insertCart = array(
-        	'id_customer'	=>	$this->session->userdata('idAdmin'),
         	'id_product_item'	=>	$item['product_item_id'],
         	'qty'	=>	$post['qty'],
         	'harga'	=>	$item['harga'],
         	'status'	=>	1,
         	'created_date'	=>	date('Y-m-d H:i:s'),
         );
+        if ($this->session->userdata('idAdmin')) {
+        	$insertCart['id_customer'] = $this->session->userdata('idAdmin');
+        } else {
+        	$insertCart['ip_address'] = GetIp();
+        }
 
         $this->GlobalModel->insertData('cart_product',$insertCart);
 

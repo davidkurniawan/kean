@@ -1,11 +1,3 @@
-<div class="toast-container bg-orange no-border position-fixed top-0 start-50 translate-middle-x p-3">
-  <div id="changeRedeem" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">      
-      <strong class="me-auto" id="changeRedeemAlert"></strong>
-      <button type="button" data-bs-dismiss="toast"><i class="bi bi-x"></i></button>
-    </div>
-  </div>
-</div>
 
 <div class="modal fade prompt" id="redeemPointModal" tabindex="-1" aria-labelledby="redeemPointModal" aria-hidden="true">
   <div class="modal-dialog">

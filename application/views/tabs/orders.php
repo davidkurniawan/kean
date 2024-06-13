@@ -41,17 +41,3 @@
     </li>            
 </ul>
 
-<div class="tab-content" id="pills-orderContent">
-    <div class="tab-pane fade show active" id="pills-konfirmasi" role="tabpanel" aria-labelledby="pills-konfirmasi-tab" tabindex="0">
-        <?php loadview("tabs/order-list"); ?>
-    </div>
-    <div class="tab-pane fade" id="pills-proses" role="tabpanel" aria-labelledby="pills-proses-tab" tabindex="0">
-        <?php loadview("tabs/proses"); ?>
-    </div>
-    <div class="tab-pane fade" id="pills-pengiriman" role="tabpanel" aria-labelledby="pills-pengiriman-tab" tabindex="0">
-        <?php loadview("tabs/pengiriman"); ?>
-    </div>
-    <div class="tab-pane fade" id="pills-sampai" role="tabpanel" aria-labelledby="pills-sampai-tab" tabindex="0">
-        <?php loadview("tabs/arrived"); ?>
-    </div>
-</div>

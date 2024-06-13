@@ -136,7 +136,7 @@ function convertDigit($digit)
 function addresUser($value='')
 {
     $CI =& get_instance();
-    return $CI->GlobalModel->getData('address_user',array('id_user_customer'=>$CI->session->userdata('idAdmin')));
+    return $CI->GlobalModel->queryManual('SELECT * FROM address_user WHERE id_user_customer="'.$CI->session->userdata('idAdmin').'" AND status_address="1" OR status_address="0" ');
 }
 
 function activeAddressUser($value='')
