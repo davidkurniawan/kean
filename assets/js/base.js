@@ -1,10 +1,12 @@
+const BASEURL = "http://localhost/shop/";
+
 function previewFile(){
     var file = $("#customFileInput").get(0).files[0]; 
     var formData = new FormData();
     formData.append('photo', file);
 
     $.ajax({
-           url : 'https://diaryofficial.id/profile/photoProfile',
+           url : BASEURL+'profile/photoProfile',
            type : 'POST',
            data : formData,
            processData: false,  // tell jQuery not to process the data
@@ -48,7 +50,7 @@ function previewFile(){
 
 
 })(jQuery);
-const BASEURL = "http://localhost/shop/";
+
 $(document).ready(function() {
     $('.banner-primary').slick({
         dots: true,

@@ -1,15 +1,15 @@
 <div class="container-fluid dialog py-0 mt-5">
     <div class="container ">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-section d-flex gap-1 gap-lg-3">
-                        <h3>Daftar Alamat</h3>
-                        <i class="bi bi-arrow-right-circle-fill"></i>
-                        <div><a href="<?php echo BASEURL.'address/list' ?>">View All</a></div>
-                    </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-section d-flex gap-1 gap-lg-3">
+                    <h3>Daftar Alamat</h3>
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                    <div><a href="<?php echo BASEURL.'address/list' ?>">View All</a></div>
                 </div>
             </div>
         </div>
+    </div>
     <div class="container content py-0 px-0 px-lg-0">
         <div class="d-flex justify-content-center align-content-between flex-wrap text-center px-1 px-md-4">
             <div class="col-12 mt-0 text-start content">

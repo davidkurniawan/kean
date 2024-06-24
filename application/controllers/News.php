@@ -18,9 +18,14 @@ class News extends CI_Controller {
 			"navbar" => "white"
 
 		];
-		// pre(confirmBiteShipApi("638f5c900de0f8507fbbc91a"));
+
+		$viewData['left'] = $this->GlobalModel->getData('news',array('featured'=>1));
+		$viewData['center'] = $this->GlobalModel->getData('news',array('featured'=>2));
+		$viewData['right'] = $this->GlobalModel->getData('news',array('featured'=>3));
+		$viewData['non'] = $this->GlobalModel->getData('news',array('featured'=>4));
+
 		$this->load->view('components/header',$data);
-		$this->load->view('news/view');
+		$this->load->view('news/view',$viewData);
 		$this->load->view('components/footer');
 
 	}

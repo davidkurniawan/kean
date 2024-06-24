@@ -101,7 +101,7 @@
                     <th>Value Referral</th>
                     <th>Action</th>
                 </tr>
-                <?php foreach ($referral as $key => $value): ?>
+                <?php /* foreach ($referral as $key => $value): ?>
                     <tr>
                         <td><?php echo $value['kode_voucher'] ?></td>
                         <td>IDR <?php echo number_format($value['value_voucher']) ?></td>
@@ -119,7 +119,7 @@
                             <td><button type="button" disabled class="btn btn-success">Claim Pemotongan</button></td>
                         <?php } ?>
                     </tr>
-                <?php endforeach ?>
+                <?php endforeach */?>
             </table>
         </div>
     </div>
@@ -132,7 +132,7 @@
                     <th>Diskon</th>
                     <th>Status</th>
                 </tr>
-                <?php foreach ($kupon as $key => $kup): ?>
+                <?php /* foreach ($kupon as $key => $kup): ?>
                 <tr>
                     <td><?php echo $kup['code_promo'] ?></td>
                     <td><?php echo $kup['promo_product_discount'] ?> %</td>
@@ -142,7 +142,7 @@
                         <td>Sudah di klaim</td>
                     <?php } ?>
                 </tr>
-                <?php endforeach ?>
+                <?php endforeach  */ ?>
             </table>
         </div>
     </div>

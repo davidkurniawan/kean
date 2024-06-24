@@ -1,4 +1,3 @@
-<?php $biodata = biodataUser(); ?>
 
 <div class="container d-flex p-4 flex-wrap">
     <div class="info-profile col-12 d-flex flex-wrap mt-5 g-5">
@@ -16,88 +15,26 @@
                 Jenis file: .JPG .JPEG .PNG</p>
             </div>                        
         </div>
-        <div class="col-12 col-lg-5 <?php echo (empty(biodataUser())) ? 'd-none' : ''; ?>" id="data-biodata">
-            <div class="item h-100 mx-0 mx-lg-5 px-0 px-lg-4 my-5 my-lg-0 biodata">
-            <?php if ($this->session->flashdata('msgbiodata')): ?>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <?php echo $this->session->flashdata('msgbiodata') ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="col-12 col-lg-9">
+            <div class="profile-bio p-4 text-left">
+                <div class="profile-list">
+                    <div class="profile-text name fw-bold"><i class="bi bi-person-arms-up"></i> <?php echo $profile['nama_lengkap'] ?></div>
+                    <div class="profile-text refferal fw-bold mt-4"><i class="bi bi-coin"></i> <?php echo $profile['poin'] ?> <i class="bi bi-circle-fill"></i> Points</div>
                 </div>
-            <?php endif ?>
-                <h2>Biodata</h2>
-                <h4 class="mt-4"><span>Nama</span><small><?php echo $profile['nama_lengkap'] ?></small></h4>
-                <h4><span>Email</span><small><?php echo $profile['email'] ?></small></h4>
-                <h4><span>No Telepon</span><small><?php echo $profile['phone'] ?></small></h4>
-                <ul class="list-inline buttons mt-5">
-                    <li class="list-inline-item"><div id="ubahBiodata"><a href="javascript:void(0)">Ubah</a></div></li>
-                </ul>
+                <div class="banner banner-profile mt-5">
+                    <div class="border-banner-profile">
+                        <div class="d-flex">
+                        <img src="http://localhost/shop/assets/img/assets/profile.png" class="img-fluid" style="height: 140px;">
+                            <div class="description-banner-profile mt-auto mb-auto">
+                                <h4 class="fw-bold">REFER A FRIEND</h4>
+                                <h5>Get 200 Points You can refer a maximum of 3 friends per year..</h5>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </div>
-        
-        <div class="col-12 col-lg-5 <?php echo (empty(biodataUser())) ? '' : 'd-none'; ?>" id="form-biodata">
-            <form class="item h-100 mx-0 mx-lg-5 px-0 px-lg-4 my-5 my-lg-0 biodata" action="<?php echo BASEURL.'profile/biodataUpdate' ?>" method="POST">
-                <h2>Biodata</h2>
-                
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" name="nama" value="<?php echo $profile['nama_lengkap'] ?>" required>
-                        <label >Name</label>
-                    </div>
-                </div>
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $profile['email'] ?>" required>
-                        <label >Email</label>
-                    </div>
-                </div>
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" name="telepon" placeholder="Phone Number" value="<?php echo $profile['phone'] ?>" required>
-                        <label >Phone Number</label>
-                    </div>
-                </div>
-
-                <ul class="list-inline mt-5">
-                    <li class="list-inline-item">
-                        <button type="submit" class="btn btn-pilih px-4">Save Changes</button>
-                    </li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-white" id="btnBatalForm">Batal</a></li>
-                </ul>
-            </form>
-        </div>
-        <div class="col-12 col-lg-4">
-            <form class="h-100 mx-0 mx-lg-5 px-0 biodata" action="<?php echo BASEURL."profile/passwordChange" ?>" method="POST">
-                <h2>Password Change</h2>
-                <?php if ($this->session->flashdata('msg')): ?>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  <?php echo $this->session->flashdata('msg'); ?>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                <?php endif ?>
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="password" class="form-control"  name="currenPassword"  required>
-                        <label >Current Password *</label>
-                        <div style="cursor: pointer;position: absolute;top: 16px;right: 10px;" class="passwordShow"><i class="bi bi-eye" style="font-size: 24px;"></i></div>
-                    </div>
-                </div>
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="password" class="form-control" name="newPassword"  required>
-                        <label >New Password *</label>
-                    </div>
-                </div>
-                <div class="col-md mb-0 mt-0">
-                    <div class="form-floating">
-                        <input type="password" class="form-control" name="confirmPassword"  required>
-                        <label >Confirm New Password *</label>
-                    </div>
-                </div>
-
-                <button class="btn btn-pilih px-4 mt-5" type="submit">Save Changes</button>
-            </form>
-        </div>
-        
     </div>
 </div>
 <hr />
@@ -116,23 +53,28 @@
 <hr>
 <?php loadview("components/address-list"); ?>
 
+<hr>
+<?php loadview("components/voucher"); ?>
+
+<hr>
 <div class="container-fluid dialog py-0 mt-5">
-    <div class="container ">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-section d-flex gap-1 gap-lg-3">
-                    <h3>Voucher</h3>
-                    <i class="bi bi-arrow-right-circle-fill"></i>
-                    <div><a href="<?php echo BASEURL.'address/list' ?>">View All</a></div>
+                    <h3>Bantuan</h3>
                 </div>
             </div>
         </div>
     </div>
-    <div class="tab-pane parent w-100" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab" tabindex="0">
-        <?php loadview("tabs/orders"); ?>        
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="<?php echo "https://wa.me/+62895345016251?text=I'm%20interested%20in%20your%20car%20for%20sale" ?>" target="_blank" class="text-desc fw-bold"><i class="bi bi-question-octagon" style="font-size: 25px;"></i> Chat Dengan Customer Service</a>
+            </div>
+        </div>
     </div>
 </div>
-
 <script type="text/javascript">
 $(document).ready(function () {
    $("#ubahBiodata").click(function () {

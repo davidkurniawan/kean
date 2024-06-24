@@ -54,7 +54,7 @@
                                 <?php foreach ($productItem as $key => $prodItem): ?>
                                 <div class="sc-item">
                                     <input type="radio" name="sc" class="color-product" id="<?php echo $prodItem['slug_color'] ?>-color" data-slugcolor="<?php echo $prodItem['slug_color'] ?>" data-idprod="<?php echo $prodItem['id_product'] ?>" data-idproditem="<?php echo $prodItem['product_item_id'] ?>">
-                                    <label for="<?php echo $prodItem['slug_color'] ?>-color" style="background:<?php echo $prodItem['color'] ?>;"></label>
+                                    <label for="<?php echo $prodItem['slug_color'] ?>-color" style="background:<?php echo $prodItem['name_color'] ?>;"></label>
                                 </div>
                                 <?php endforeach ?>
                             </div>
@@ -69,9 +69,11 @@
                                 </select>
                                 <input type="hidden" name="idProductItem" id="idProductItem">
                             </div>
+                            <?php if (!empty($product['sub_kategori'])): ?>
                             <div class="size-chart-info mt-4">
-                                <a href="#" class="btn btn-dark">Size Chart Info</a>
+                                <a href="#" id="modalSizeChart" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-category="<?php echo $product['sub_kategori'] ?>">Size Chart Info</a>
                             </div>
+                            <?php endif ?>
                         </div>
 
                         <div class="fw-quantity mt-4 row">
@@ -260,9 +262,30 @@
     </section>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-uppercase fw-bold" id="staticBackdropLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php echo $product['size_chart'] ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 $(document).ready(function () {
-    
+    $("#modalSizeChart").click(function() {
+        var subcategori = $(this).data('bs-category');
+        $('#staticBackdropLabel').text(subcategori);
+    });
     $('#BuyNow').click(function (e) {
         e.preventDefault();
         var prodItem = $(".product-item-val:checked").val();

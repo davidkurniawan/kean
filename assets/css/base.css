@@ -699,12 +699,88 @@ input[type="color"]:focus,
     #carouselStack .carousel-inner .carousel-item-prev {
       transform: translateX(-33.3%);
     }
-    .height-lg-523 {
-        height: 523px;
-    }
-    .height-lg-523 .btn-view-more {
+    /*.height-lg-523 .btn-view-more {
         position: absolute;bottom: 0;width: 100%;
-    }
+    }*/
+}
+
+.card.height-lg-523 {
+    border: unset;
+    height: 450px;
+}
+
+.news-img {
+    width: 306px;
+    height: 204px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.modal-header {
+    border-bottom: unset;
+}
+
+.card.height-lg-523:hover .news-link {
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+    width: 100%;
+    color: white;
+}
+
+.card.height-lg-523:hover .news-link a{
+    color: white;
+    font-weight: bold;
+}
+
+.section-portal .center-featured {
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.product-poin {
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+}
+.center-featured .card-body {
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+    color: white;
+}
+
+.left-featured .card-body {
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+    color: white;
+}
+
+.left-featured .card-body .card-title {
+    font-size: 18px;
+}
+
+.right-featured .card-body {
+    font-size: 18px;
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+    color: white;
+}
+
+.date-day {
+    font-family: "Oswald", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    border-bottom: 0.25rem solid #1B272C;
+    text-align: center;
+    font-size: 2.25rem;
+    padding-bottom: 0.3125rem;
+    text-transform: uppercase;
+}
+.date-month {
+    text-align: center;
+    margin-top: 0.3125rem;
+    border-bottom: 0.25rem solid #1B272C;
+    padding-bottom: 0.3125rem;
+}
+.date-year {
+    text-align: center;
+    font-family: "Oswald", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    padding-top: 0.625rem;
+    font-size: 1.3125rem;
 }
 
 #carouselStack .carousel-inner .carousel-item-end,
@@ -2931,10 +3007,27 @@ div.collapse.show .tab-other {
 # Posts
 --------------------------------------------------------------*/
 .post-entry-1 {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
     padding: 10px;
-    border: 1px solid;
-    background-color: #ffcd39;
+    background-color: #00ffff33;
+        --mask: linear-gradient(#000 0 0) center/calc(100% - 30px) calc(100% - 30px) no-repeat, conic-gradient(from 135deg at top ,#0000,#000 1deg 89deg,#0000 90deg) 0 0 /30px 15px space no-repeat, conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/30px 15px space no-repeat, conic-gradient(from 45deg at left ,#0000,#000 1deg 89deg,#0000 90deg) 0 0 /15px 30px no-repeat space, conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/15px 30px no-repeat space;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    padding-top: 33px;
+    padding-left: 20px;
+    padding-bottom: 42px;
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+}
+.section-portal .news-body .description-news {
+    font-size: 14px;
+}
+.news-link {
+    position: absolute;
+    bottom: 0;
+}
+.posts .btn-warning {
+    border-radius: unset;
+    width: 100%;
 }
 
 .p-5-5 {
@@ -3547,3 +3640,103 @@ a:hover {
     margin-bottom: 10px;
     font-weight: bolder;
 }
+
+.card-voucher {
+/*    background: #ffc107;*/
+} 
+
+.card-voucher .title-voucher {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+} 
+
+.card-voucher .valid-date-voucher {
+    font-size: 12px;
+    text-align: center;
+} 
+
+.card-voucher .description-voucher {
+    font-size: 14px;
+    text-align: center;
+} 
+
+.card-voucher .grid-one {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+.card-voucher .grid-two {
+    color: white;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+.card-voucher .kategori-voucher {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-voucher .amount-voucher {
+    font-size: 6vh;
+    font-weight: bold;
+}
+
+.f-15 {
+    font-size: 15px;
+}
+
+.card-voucher .grid-one {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.card-voucher .grid-two {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+}
+
+.profile-bio .profile-text.name {
+    font-size: 28px;
+}
+
+.profile-bio .profile-text.name .bi-person-arms-up {
+    border-radius: 25%;
+    border: 3px solid black;
+    background-color: brown;
+    color: white;
+}
+
+.profile-bio .profile-text.refferal {
+    font-size: 24px;
+}
+
+.profile-bio .profile-text.refferal .bi-circle-fill{
+    font-size: 5px;
+    vertical-align: middle;
+} 
+
+.banner-profile {
+    border-radius: 25px;
+    padding: 16px;
+    background: linear-gradient(135deg, #000000, #000000, #5dd636, #8ad413, #79d632, #e2d720, #a3e908, #f47a00);
+    --mask: 
+    linear-gradient(#000 0 0) center/calc(100% - 20px) calc(100% - 20px) no-repeat,
+    conic-gradient(from  135deg at top   ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /20px 10px space no-repeat,
+    conic-gradient(from  -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/20px 10px space no-repeat,
+    conic-gradient(from   45deg at left  ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /10px 20px no-repeat space,
+    conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/10px 20px no-repeat space;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.banner-profile .border-banner-profile {
+    border-radius: 25px;
+    border: 3px solid;
+}
+
