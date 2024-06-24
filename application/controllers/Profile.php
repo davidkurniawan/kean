@@ -25,7 +25,7 @@ class Profile extends CI_Controller {
 		$viewData['profile']	= $this->GlobalModel->getDataRow('user_customer',array('id_user_customer'=>$this->session->userdata('idAdmin')));
 		$viewData['productpoin']	= $this->GlobalModel->getData("produk_poin",null);
 		$viewData['voucher']	= $this->GlobalModel->getData("voucher",null);
-
+		$this->session->sess_destroy();
 		$this->load->view('components/header',$data);
 		$this->load->view('profile',$viewData);
 		$this->load->view('components/footer');
