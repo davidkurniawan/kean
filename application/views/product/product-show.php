@@ -1,6 +1,6 @@
 <style type="text/css">
 	.background-image-latest {
-	    background-image: url('<?php echo BASEBACK.$subkategori['image'] ?>');
+	    background-image: url('<?php echo BASEBACK.$pageKategori['image'] ?>');
 	}
 </style>
 <div class="main">

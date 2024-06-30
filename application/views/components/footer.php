@@ -35,9 +35,9 @@
                 <div><a href="#">Contact Us</a></div>
             </div>
             <div class="col-12 col-lg-3 order-2 order-lg-3 mb-4 mb-lg-0 ">
-                <div>Email : Info@kean.com</div>
+                <div>Email : Info@shop.com</div>
                 <div>Telp. 021 - 97864523</div>
-                <div>Address : Kebayoran lama, Jakarta 12240, Indonesia</div>
+                <div>Address : Belum tau dimana, Jakarta 12240, Indonesia</div>
                 <div class="mt-4">
                     <div class="follow-us"><h4 class="fw-bold">FOLLOW US</h4></div>
                     <ul class="list-inline socials ">
@@ -60,7 +60,7 @@
 </div>
     <div class="container p-3">
         <div class="float-end">
-            <i class="bi bi-c-circle"></i> COPYRIGHT <?php echo date('Y') ?> KEAN.COM.ID
+            <i class="bi bi-c-circle"></i> COPYRIGHT <?php echo date('Y') ?> SHOP.COM.ID
         </div>
     </div>
 <!-- Modal -->

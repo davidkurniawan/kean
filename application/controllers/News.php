@@ -30,4 +30,13 @@ class News extends CI_Controller {
 
 	}
 
+	public function detail($value='')
+	{
+		$viewData['post'] = $this->GlobalModel->getDataRow('news',array('url'=>$value));
+
+		$this->load->view('components/header');
+		$this->load->view('news/detail',$viewData);
+		$this->load->view('components/footer');
+	}
+
 }

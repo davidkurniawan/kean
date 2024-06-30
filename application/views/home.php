@@ -1,29 +1,20 @@
-<style type="text/css">
-</style>
+
 <div class="main">
-	<section class="home-banner">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 col-sm-12 mb-3">
-					<div class="banner-primary">
-						<?php foreach ($banner as $key => $ban): ?>
-							<div>
-								<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
-							</div>
-						<?php endforeach ?>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-12">
-					<div class="row">
-						<?php foreach ($bannerRight as $key => $ban): ?>
-						<div class="col-6 col-lg-12 banner-second one mb-2 ">
-							<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
-						</div>
-						<?php endforeach ?>
-					</div>
-				</div>
-			</div>
-		</div>
+	<section class="sc-home-video py-main mt-5">
+	    <div class="container-fluid">
+	        <div class="video-youtube">
+	            <div class="embed-responsive embed-responsive-16by9">
+	                <div class="wrapper-thumbnail" role="button" tabindex="0">
+	                    <!-- <div style="background-image:url('<?php echo ASSETS.'img/banner/skatevideo.jpeg' ?>');" alt="youtube-thumbnail" class="thumbnail-youtube" quality="75" style="object-fit:cover"></div> -->
+	                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FzhaFMkvcus?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	                    <div class="wrapper-button">
+	                        <!-- <img src="https://wethefest.com//_next/static/media/icon_play.c76ea39b.svg" alt="play-btn" class="img-fluid" quality="75" > -->
+	                    </div>
+	                </div>
+	                <img src="https://wethefest.com//img/bg/img_bg-home-video.webp" alt="" class="bg-border-video" quality="75" sizes="(max-width: 768px) 55vw, (max-width: 1200px) 50vw, 65vw" style="inset:0;width:100%;height:100%;position:absolute">
+	            </div>
+	        </div>
+	    </div>
 	</section>
 
 	<section class="brand">
@@ -74,6 +65,85 @@
 						<img src="<?php echo ASSETS.'img/logobrand/toymachine.png' ?>" class="img-fluid">
 					</a>
 				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-sm-12 mb-3">
+					<div class="banner-primary">
+						<?php foreach ($banner as $key => $ban): ?>
+							<div>
+								<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+							</div>
+						<?php endforeach ?>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-12">
+					<div class="row">
+						<?php foreach ($bannerRight as $key => $ban): ?>
+						<div class="col-6 col-lg-12 banner-second one mb-2 ">
+							<a href="">
+								<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+								<div class="middle">
+									<div class="text-title fw-bold text-white"><?php echo $ban['title'] ?></div>
+									<div class="text fw-bold text-white"><?php echo $ban['description'] ?></div>
+								</div>
+								<div class="cta-banner">
+									<a href=""><i class="bi bi-caret-right-fill"></i> View More</a>
+								</div>
+							</a>
+						</div>
+						<?php endforeach ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> 
+	<section class="banner-two">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 mb-3">
+					<?php foreach ($bannerTwoUtama as $key => $ban): ?>
+						<a href="<?php echo BASEURL ?>">
+							<div class="banner-primary-two" style="height:100%;background-image: url('<?php echo BASEBACK.$ban['image'] ?>');background-size: cover;">
+							</div>
+						</a>
+					<?php endforeach ?>
+				</div>
+				<div class="col-lg-6 col-sm-12">
+					<div class="row">
+						<?php foreach ($bannerTwoSecond as $key => $ban): ?>
+						<div class=" banner-second one mb-3 ">
+							<img src="<?php echo BASEBACK.$ban['image'] ?>" class="img-fluid">
+							<div class="middle">
+								<div class="text-title fw-bold text-white"><?php echo $ban['title'] ?></div>
+								<div class="text fw-bold text-white"><?php echo $ban['description'] ?></div>
+							</div>
+							<div class="cta-banner">
+								<a href=""><i class="bi bi-caret-right-fill"></i> View More</a>
+							</div>
+						</div>
+						<?php endforeach ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="product-catalog">
+		<div class="container">
+			<div class="row">
+				<?php foreach ($katalog as $key => $kat): ?>
+				<div class="col-lg-3 col-12">
+					<div class="card-katalog" style="background-image: url('<?php echo BASEBACK.$kat['product_catalog_thumbnail'] ?>');">
+						<div class="middle">
+							<div class="text-title"><?php echo $kat['product_catalog_name'] ?></div>
+						</div>
+						<a class="cta-banner" href="<?php echo BASEURL.'product/catalog/'.$kat['slug'] ?>"><i class="bi bi-caret-right-fill"></i> View More</a>
+					</div>
+				</div>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</section>

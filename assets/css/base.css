@@ -2148,7 +2148,7 @@ hr {
     width: 100%;
     padding: 0;
     overflow: hidden;
-    height: 450px;
+    height: 600px;
 }
 .video-youtube .embed-responsive .wrapper-thumbnail {
     position: absolute;
@@ -2162,7 +2162,7 @@ hr {
 .video-youtube .embed-responsive .wrapper-thumbnail .thumbnail-youtube {
     background-image: url(http://localhost/kean/assets/img/banner/skatevideo.jpeg);
     background-position: top center;
-    height: 409px;
+    height: 100%;
 }
 .video-youtube .embed-responsive .wrapper-thumbnail .wrapper-button {
     position: absolute;
@@ -3740,3 +3740,112 @@ a:hover {
     border: 3px solid;
 }
 
+.banner-second {
+    position: relative;
+}
+
+.banner-second .middle {
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.banner-second .cta-banner {
+    transition: .5s ease;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    background: antiquewhite;
+    padding: 9px;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.banner-second .text {
+    font-size: 24px;
+}
+
+.banner-second:hover img {
+  opacity: 0.9;
+}
+
+.banner-second:hover .cta-banner {
+    opacity: 1;
+}
+
+.card-katalog {
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.card-katalog .middle {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.card-katalog:hover {
+    opacity: 0.9;
+}
+
+.card-katalog .cta-banner {
+    transition: .5s ease;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    background: antiquewhite;
+    padding: 9px;
+    font-weight: bold;
+    opacity: 0;
+    width: ;
+    background:  linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);;
+}
+
+.card-katalog a {
+    color: white;
+    width: 80%;
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+}
+
+.card-katalog:hover .cta-banner {
+    opacity: 1;
+}
+
+.side-entry ul li, .side-entry ul {
+    list-style: none;
+    font-size: 18px;
+    padding-left: 6px;
+}
+
+.side-entry .list-entry {
+    margin-top: 10px;
+}
+
+.side-entry .border-top {
+    background: linear-gradient(135deg, #65696c, #585b5d, #6f7375, #545158, #6b6570, #727478, #585b5d, #7b7f81);
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+}

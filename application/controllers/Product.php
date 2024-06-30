@@ -20,7 +20,11 @@ class Product extends CI_Controller {
 
 		];
 
-		$viewData['subkategori'] = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$paramTwo));
+		if (empty($paramTwo)) {
+			$viewData['pageKategori'] = $this->GlobalModel->getDataRow('product_category',array('slug'=>$param));
+		} else {
+			$viewData['pageKategori'] = $this->GlobalModel->getDataRow('productsub_category',array('slug'=>$paramTwo));
+		}
 
 		$this->load->view('components/header',$data);
 		$this->load->view('product/product-show',$viewData);
@@ -55,6 +59,11 @@ class Product extends CI_Controller {
 		$this->load->view('components/header',$data);
 		$this->load->view('product/product-detail',$viewData);
 		$this->load->view('components/footer');
+	}
+
+	public function catalog($value='')
+	{
+		// code...
 	}
 
 	public function searchProductSize($value='')
